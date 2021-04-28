@@ -1,9 +1,9 @@
 import { index, Types, Actions, regex, flags, auth } from 'jsonion/raw'
-export default var json = { ion: 'cv', languageCode: 'en_EN', db: {
+export default var json = { ion: 'cv', languageCode: 'en_EN', db: { 
 
 // Parser instructions
 ...index.map('namespace', regex.subset({'[%%]': '*'}), // ...
-	'profile[s] # .(project, programme, event, workshop, training, organiser)[s] (namespace, title)? 	{Types.array}? Types.string'
+	'profile[s] # .(project, programme, event, workshop, training, organiser)[s] (namespace, title)? 	{Types.array}? {Types.string}'
 ),
 ...index.link('namespace', flags.exclude( /\s+/ ),
 	Types.smallCase, Types.hashtag, Types.camelCase
@@ -12,331 +12,302 @@ export default var json = { ion: 'cv', languageCode: 'en_EN', db: {
 ...Types.subset('array', 'string', 'integer', 'arrayOfStrings', {'dateTime': ['unixTimestamp', 'en_EN']}),
 
 profile: [
+
 {
-	namespace: 'blazbrmnn',
-	fullName: {
-		name: 'Blaž',
-		surname:,
-	},
+ namespace: 'blazbrmnn',
+ fullName: {
+  name: 'Blaž',
+  surname: "…",
+ },
 
-	email: "blazbrmnn@yahoo.com",
-	website:,
+ email: "blazbrmnn@yahoo.com",
+ website: "linkedin.com/in/blaž-…-249a261b1/",
 
-	currentRoles: [
-		'A dancing copy-cat at #LeapGest',
-		'Vegan developer at github.com/jsonion'
-	],
-	interests: [
-		'Ethical business strategy',
-		'Environmental activism',
-		'Knowledge management',
-		'Goodwill'
-	],
+ currentRoles: [
+	'A dancing copy-cat at #LeapGest',
+	'Vegan developer at github.com/jsonion'
+ ],
+ interests: [
+	'Ethical business strategy',
+	'Environmental activism',
+	'Knowledge management',
+	'Goodwill'
+ ],
+
+ skills: [
+
+	'Web development', 'Copywriting', "Events & workshops", 'Modern dance', 'Vegan cheese',
+
+{
+	'Prototyping': [
+	'Rapid development', 'Lean business model generation', 'Service design thinking jam', 'Crowdfunding campaign design' ]},
+
+{
+	skillset: 'Web development',
+	namespace: [ 'node-js', 'javascript-es6', 'react', 'redux', 'twitter-bootstrap', 'graphql', 'json', 'meteor-js', 'json-schema', 'php', 'sql', 'css', 'svg', 'microdata', 'markdown', 'regex', 'holochain', 'typescript' ]
+},
+
+{ 'Copywriting': ['Social media campaigns', 'Website texts', 'How-to & DIY articles', 'Code documentation', 'Commonmark'] },
+
+{ 'Graphic design': ['Web interface design', 'Gimp', 'Photoshop', 'Inkscape', 'SVG'] }
+
+ ],
+ experience: {
+  education: [
+{
+	field: 'Management and Business Administration',
+	degree: 'ScB',
+	avg: '8.05',
+	enrollment: '2006 - 2012',
+	institution: 'Faculty of Economics, University of Ljubljana' 
+}],
+
+  training: [
+{
+	event: "Philosophical Marathon",
+	type: [ 'lectures', 'debate' ],
+	time: [ 2018, "3rd week in November" ],
+	organiser: [ "ff.uni-lj.si/obvestila/filozofski-maraton" ],
+
+	outcome: {
+	"#LeapGest project was grounded in arguments": [
+		'http://igg.me/at/leapgest18',
+		'https://github.com/jsonion/leapgest/blob/master/screenshot-developer.twitter.com-2018-12-13-16-26-12.png',
+		{ 'https://jstr.co/#leapgest/fb-blablaz-anonymous-voiceless': flags.offline }
+	]},
+
+	activity: "Transcribing speech real-time ; Commenting at panels ; Preparing summary of my own comments ; Formatting one transcript in AI-augmented style and posting to event page (as [Fb]/santappl); Publishing my comments as project argumentation in a large vegan group"
+},
+
+{
+	workshop: "Non-violent communication moderation workshop",
+	organiser: { namespace: 'sl-moderators-assoc' },
+	t: 2017 },
+
+{
+	training: "Proactive Caffee moderation training",
+	organisers: ['sl-moderators-assoc'],
+
+	outcome: { certificate: true },
+	t: 2016 },
+
+{
+	project: 'leap-gesture',
+	programme: "Mestni inkubator Ljubljana",
+	organisers: [{ namespace: 'ti-povej' }],
+
+	activity: ["Public events (5)", "Raising awareness"],
+	outcome: 'https://igg.me/at/fairshift',
+	t: 2015 },
+
+{
+	project: 'git-lafemme',
+	timespan: "March - October 2012",
+	programme: "BoundBreaker start-up accelerator programme",
+	organiser: { namespace: 'hekovnik' },
+
+	activities: "Web application design and programming ; Attending lectures and meetings ; Implementing lean principles to business development",
+	reward: "An excursion to Silicon Valley, in residency with a start-up\'s house in San Francisco" },
+
+{
+	type: ['music', 'dance', 'piano', 'singing', 'language', 'diy'],
+	namespace: 'leap-gesture',
+
+	programme: "Leap Gesture × Street Player (self-managed)",
+	genres: [ 'dnb', 'dubstep', 'trance', 'house' ],
+	since: 2018,
+
+	activity: "Stepping out to dance",
+	outcomes: {
+		"Increasing depth of perception to music while harvesting synergies among singing, dancing, playing instruments and whistling":
+		"indiegogo.com/projects/leap-gesture-facebook-support-for-ex-smokers#/" }
+}],
+
+  events: [ // profile # experience events
+{
+	title: 'LEAP Summit',
+	type: ['entrepreneurial', 'conference', 'networking', 'party'],
+	time: '30th of April, 2019',
+	location: 'Zagreb, Croatia',
+ 	activity: 'Organising an online giveaway: Covering expenses and accomodation for two people during a 3 day conference; Just breathing in city at night' },
+
+{
+ 	organiser: 'Global Service Jam',
+	type: ['service-design', 'start-up'],
+   	events: [
+   	"Sustainability Jam 2016 (Facebook only)", "JamJam Camp HQ 2016 (Alicante, Spain)",
+   	"Sustainability Jam 2015", "GovJam 2015", 
+   	"XJam 2014 (Ljubljana)", "Culture Jam 2014 (Maribor)", "GovJam 2014"
+   	],
+   	t: "2014 - 2016" },
+
+{
+	title: "Challenging the Crisis (2016)",
+	type: ['advocacy', 'social-responsibility', 'journalism'],
+	locations: [
+		"Vienna, Austria",
+		"Brussels, Belgium",
+		"Ljubljana, Slovenia" ]},
+
+{
+	t: 2014,
+	type: [
+		'service-design', 'networking', 'proactive-caffee', 'lean-strategy' ],
+	events: [
+	"Pro-active Caffee",
+	"Start-Up Weekend",
+	"Reinovator",
+	"Social innovation exposition"]}
+
+ ]},
+
+
+ featured: [
+{
+	type: ['diy'],
+	project: 'leap-gesture',
+	caption: "A habit in motion on a reflective surface. Every other leap second, it's all about you, knowledge and ethics.",
+
+	roles: ['dancer', 'web-prototypist'],
 
 	skills: [
 
-		'Web development', 'Copywriting', "Events & workshops", 'Modern dance', 'Vegan cheese',
+		'Web development', 'Copywriting', 'Prototyping',
 
 	{
-		'Prototyping': [
-		'Rapid development', 'Lean business model generation', 'Service design thinking jam', 'Crowdfunding campaign design' ]},
+		'Prototyping': ['Crowdfunding campaign', 'Social media contents'] },
 
 	{
-		skillset: 'Web development',
-		namespace: [ 'node-js', 'javascript-es6', 'react', 'redux', 'twitter-bootstrap', 'graphql', 'json', 'meteor-js', 'json-schema', 'php', 'sql', 'css', 'svg', 'microdata', 'markdown', 'regex', 'holochain', 'typescript' ]
-	},
+		'Web development': [
+		'javascript-es6', 'commonmark', 'graphql', 'react', 'redux', 'json', 'jsonion', 'sql', 'json-schema', 'svg', 'microdata' ]},
 
-	{ 'Copywriting': ['Social media campaigns', 'Website texts', 'How-to & DIY articles', 'Code documentation', 'Commonmark'] },
+	{	
+		'Copywriting': ['Social media campaigns', 'Articles – How-to / DIY'],
+		'Technical writing': ['React.jsonion on social media', 'Commonmark', 'Code documentation'] },
 
-	{ 'Graphic design': ['Web interface design', 'Gimp', 'Photoshop', 'Inkscape', 'SVG'] }
+	{ 'Graphic design': ['Gimp', 'Inkscape', 'SVG'] },
 
 	],
 
-	experience: {
-		education: [
-		{
-			field: 'Management and Business Administration',
-			degree: 'ScB',
-			avg: '8.05',
-			enrollment: '2006 - 2012',
-			institution: 'Faculty of Economics, University of Ljubljana' }
-		],
+	waystones: {
 
-		training: [
+	1: {
+	"\"What about #lepagesta\" (spiral snake run, at public workshops)": 
+	[ "Service Jam regular attendee", "Event organizer at TiPovej!", "Blogger at facebook.com/blablaz" ],
 
-		{
-			event: "Philosophical Marathon",
-			type: [ 'lectures', 'debate' ],
-			time: [ 2018, "3rd week in November" ],
-			organiser: [ "ff.uni-lj.si/obvestila/filozofski-maraton" ],
+	"Global economy hack at Leap second 2015 (a crowdfunding minifest)":
+	[ 'copywriting', 'prototyping', 'web-development', "Workshop organizer" ]},
 
-			outcome: {
-			"#LeapGest project was grounded in arguments": [
-				'http://igg.me/at/leapgest18',
-				'https://github.com/jsonion/leapgest/blob/master/screenshot-developer.twitter.com-2018-12-13-16-26-12.png',
-				{ 'https://jstr.co/#leapgest/fb-blablaz-anonymous-voiceless': flags.offline }
-			]},
+	2: {
+	"Web prototypes (online exposition)": 
+	[ "Web developer" ]},
 
-			activity: "Transcribing speech real-time ; Commenting at panels ; Preparing summary of my own comments ; Formatting one transcript in AI-augmented style and posting to event page (as [Fb]/santappl); Publishing my comments as project argumentation in a large vegan group"
-		},
+	3: {
+	"\"Are you vegan?\"":
+	[ "Brand positioning (with Anonymous for the Voiceless and DxE in the picture)", "DIY vegan cheese presenter" ]
 
-		{
-			workshop: "Non-violent communication moderation workshop",
-			organiser: { namespace: "sl-moderators-assoc" },
-			t: 2017 },
-
-		{
-			training: "Proactive Caffee moderation training",
-			organisers: ["sl-moderators-assoc"],
-
-			outcome: { certificate: true },
-			t: 2016
-		},
-
-		{
-			project: 'leap-gesture',
-			programme: "Mestni inkubator Ljubljana",
-			organisers: [{ namespace: "ti-povej" }],
-
-			activity: ["Public events (5)", "Raising awareness"],
-			outcome:
-				"indiegogo.com/projects/lepa-gesta-virus-for-global-economy-leap-second",
-			t: 2015
-		},
-
-		{
-			project: 'git-lafemme',
-			timespan: "March - October 2012",
-			programme: "BoundBreaker start-up accelerator programme",
-			organiser: { namespace: "hekovnik" },
-
-			activities: "Web application design and programming ; Attending lectures and meetings ; Implementing lean principles to business development",
-			reward: "An excursion to Silicon Valley, in residency with a start-up\'s house in San Francisco"
-		},
-
-		{
-			type: ['music', 'dance', 'piano', 'singing', 'language', 'diy'],
-			namespace: 'leap-gesture',
-
-			programme: "Leap Gesture × Street Player (self-managed)",
-			genres: [ 'dnb', 'dubstep', 'trance', 'house' ],
-			since: 2018,
-
-			activity: "Stepping out to dance",
-			outcomes: {
-				"Increasing depth of perception to music while harvesting synergies among singing, dancing, playing instruments and whistling":
-				"indiegogo.com/projects/leap-gesture-facebook-support-for-ex-smokers#/" }
-		}],
-
-		events: [
-
-		{
-			title: 'LEAP Summit',
-			type: ['entrepreneurial', 'conference', 'networking', 'party'],
-			time: '30th of April, 2019',
-			location: 'Zagreb, Croatia',
- 			activity: 'Organising an online giveaway: Covering expenses and accomodation for two people during a 3 day conference; Just breathing in city at night' },
-
-		{
- 			organiser: 'Global Service Jam',
-			type: ['service-design', 'start-up'],
-   			events: [
-   				"Sustainability Jam 2016 (Facebook only)", "JamJam Camp HQ 2016 (Alicante, Spain)",
-   				"Sustainability Jam 2015", "GovJam 2015", 
-   				"XJam 2014 (Ljubljana)", "Culture Jam 2014 (Maribor)", "GovJam 2014"
-   			],
-   			t: "2014 - 2016" },
-
-		{
-			title: "Challenging the Crisis (2016)",
-			type: ["advocacy", "social-responsibility", "journalism"],
-			locations: [
-				"Vienna, Austria",
-				"Brussels, Belgium",
-				"Ljubljana, Slovenia"] },
-
-		{
-			t: 2014,
-			type: [
-				"service-design", "networking", "proactive-caffee", "lean-strategy" ],
-			events: [
-				"Pro-active Caffee",
-				"Start-Up Weekend",
-				"Reinovator",
-				"Social innovation exposition"
-			]
-		}]
-	},
-
-
-	//
-	//
-
-	keywords: {
-		values: [],
-		skills: [],
-		education: [],
-		interests: []
-	},
-	categories: {
-		skillset: {
-		"organizational": [],
-		"communication": [],
-		"job-related": [],
-		"computer": [],
-		"other": []
-	}},
-
-	//
-	//
-
-
-	featured: [
-
-	{
-		type: ['diy'],
-		project: 'leap-gesture',
-		caption: "A habit in motion on a reflective surface. Every other leap second, it's all about you, knowledge and ethics.",
-
-		roles: ['dancer', 'web-prototypist', 'cook', 'musician'],
-
-		skills: [
-
-			'Web development', 'Copywriting', 'Prototyping',
-
-			{
-				'Prototyping': ['Crowdfunding campaign', 'Social media contents'] },
-
-			{
-				'Web development': [
-				'javascript-es6', 'commonmark', 'graphql', 'react', 'redux', 'json', 'jsonion', 'sql', 'json-schema', 'svg', 'microdata' ]},
-
-			{	
-				'Copywriting': ['Social media campaigns', 'Articles – How-to / DIY'],
-				'Technical writing': ['React.jsonion on social media', 'Commonmark', 'Code documentation'] },
-
-			{ 'Graphic design': ['Gimp', 'Inkscape', 'SVG'] },
-		],
-
-		waystones: {
-			1: {
-				"\"What about #lepagesta\" (spiral snake run, at public workshops)": 
-				[ "Service Jam regular attendee", "Event organizer at TiPovej!", "Blogger at facebook.com/blablaz" ],
-
-				"Global economy hack at Leap second 2015 (a crowdfunding minifest)":
-				[ 'copywriting', 'prototyping', 'web-development', "Workshop organizer" ]
-			},
-
-			2: {
-				"Web prototypes (online exposition)": 
-				[ "Web developer" ]},
-
-			3: {
-				"\"Are you vegan?\"":
-				[ "Integrating with Anonymous for the Voiceless" ]}
-		}
-	},
-
-	{
-		type: ['volunteering'],
-		role: "Web developer (implementing, advice)",
-		active: { from: 2009, to: 2016 },
-
-		projects: [ {}, {}, {}, {}, {}, {}, {}, 
-			{ namespace: "quercialab-org", t: "September 2016" } ],
-
-		skills: [
-
-		{ "Web development": [
-				"HTML", "CSS", "Foundation",
-				"JavaScript", "jQuery", "Isotope.js", "Velocity.js", "fullPage.js", 
-				"PHP", "Wordpress", "PunBB" ]
-		}]
-	},
-
-	{
-		type: 'freelance',
-		project: 'cofinder-eu',
-
-		roles: "Web developer",
-		active: { from: 2013, to: 2014 },
-
-		activity: [
-		{
-			task: "Web backend development",
-			technologies: ["PHP", "Yii", "MySQL"],
-			outcomes: [
-			"Database schema and data model implementation", "Search matching algorithm (before scaling platform)", "Brand-free implementation (on subdomains)" ]
-		},
-			
-			"Co-organizing ... Networking events"
-		]
-	},
-
-	{
-		type: ["startup", "experiment"],
-		namespace: "git-lafemme",
-
-		roles: ["Web developer", "UI designer"],
-		active: 2012,
-
-		activity: [
-		{	
-			task: "Web development", // /p/ing
-			methods: ["Agile software development"],
-			technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "oAuth"] },
-
-		{	
-			task: "Application interface design",
-			toolset: ["Photoshop", "Instagram"],
-			results: ["Web interface", "Mobile app interface", "Social media design elements"] },
-
-		{	
-			task: "Customer research",
-			methods: ["User interviews", "Lean startup methodology"] },
-
-		{	
-			activity: "Business development",
-			methods: ["Agile software development"],
-			results: ["Seminar paper", "Business model canvas"] }
-		]
-	},
-
-	{
-		type: ["volunteering"],
-		namespace: "thlive-net",
-	
-		roles: [ "Web developer", "Forum moderator", "tLT team member" ],
-		active: { 
-			from: 2003, to: 2007 },
-
-		activity: [
-
-			"Web development", "Forum moderation",
-
-		{
-			task: "Web development",
-		 	technologies: ["HTML", "CSS", "PHP", "MySQL"] }
-		]
-	}],
-
-
-	    //
-	/* UU  */
-	mentions: [
-
-		{ namespace: "ana-beks" },
-		{ namespace: "kyle-awesome" }, //
-		{ namespace: "tais-nissen" }, //
-
-	]	//                     //
-
-},
-
-projects: [
+}}},
 
 {
-	namespace: "git-lafemme",
+	type: ['volunteering'],
+	role: "Web developer (implementing, advice)",
+	active: { from: 2009, to: 2016 },
+
+	projects: [ {}, {}, {}, {}, {}, {}, {}, 
+		{ namespace: 'quercialab-org', t: "September 2016" } ],
+
+	skills: [
+
+	{ 
+		"Web development": [
+		"HTML", "CSS", "Foundation",
+		"JavaScript", "jQuery", "Isotope.js", "Velocity.js", "fullPage.js", 
+		"PHP", "Wordpress", "PunBB" ]
+	}]
+},
+
+{
+	type: 'freelance',
+	project: 'cofinder-eu',
+
+	roles: "Web developer",
+	active: { from: 2013, to: 2014 },
+
+	activity: [
+	{
+		task: "Web backend development",
+		technologies: ["PHP", "Yii", "MySQL"],
+		outcomes: [
+		"Database schema and data model implementation", "Search matching algorithm (before scaling platform)", "Brand-free implementation (on subdomains)" ]
+	},
+			
+		"Co-organizing ... Networking events"
+	]
+},
+
+{
+	type: ['startup', 'experiment'],
+	namespace: 'git-lafemme',
+
+	roles: ["Web developer", "UI designer"],
+	active: 2012,
+
+	activity: [
+	{	
+		task: "Web development", // /p/ing
+		methods: ["Agile software development"],
+		technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "oAuth"] },
+
+	{	
+		task: "Application interface design",
+		toolset: ["Photoshop", "Instagram"],
+		results: ["Web interface", "Mobile app interface", "Social media design elements"] },
+
+	{	
+		task: "Customer research",
+		methods: ["User interviews", "Lean startup methodology"] },
+
+	{	
+		activity: "Business development",
+		methods: ["Agile software development"],
+		results: ["Seminar paper", "Business model canvas"] }
+	]
+},
+
+{
+	type: ['volunteering'],
+	namespace: 'thlive-net',
+	
+	roles: [ "Web developer", "Forum moderator", "tLT team member" ],
+	active: { 
+		from: 2003, to: 2007 },
+
+	activity: [
+
+		"Web development", "Forum moderation",
+
+	{
+		task: "Web development",
+	 	technologies: ["HTML", "CSS", "PHP", "MySQL"] }
+	]
+}],
+
+     //
+ /* UU  */
+ mentions: [
+
+	{ namespace: "ana-beks" },
+	{ namespace: "kyle-awesome" }, //
+	{ namespace: "tais-nissen" }, //
+
+ ]	//                     //
+
+}],
+
+
+projects: [ 
+{
+	namespace: 'git-lafemme',
 	title: "Lafemme fashion finder",
 	caption: 
 	"Fashion community in app, where people help each other find the fashion items they love.",
@@ -375,7 +346,7 @@ projects: [
 	{
 		place: "Punkt, Coworking Zasavje", city: "Trbovlje, Slovenia", 
 		timespan: {
-			from: "November 27, 2014 10:00", to: "November 27, 2014 17:00"},
+			from: "November 27, 2014 10:00", to: "November 27, 2014 17:00" },
 
 		outcomes: [
 		{ "Workshop": "https://www.facebook.com/events/817208735006463/" }]
@@ -383,10 +354,10 @@ projects: [
 
 
 	{	
-		place: "Aktivator, MC Šentjur", "city": "Šentjur, Slovenia", 
+		place: "Aktivator, MC Šentjur", city: "Šentjur, Slovenia", 
 		timespan: {
 			from: "February 28, 2015 10:00", to: "February 28, 2015 15:00"},
-		description: "\"How to integrate Lepa gesta with the local environment?\" ... The question left unanswered previously was discussed. Afterwards we wen't for a pizza.",
+		description: "\"How to integrate Lepa gesta with the local environment?\" ... The question left unanswered previously was discussed in group. Afterwards we wen't for a pizza.",
 		
 		outcomes: [
 		{ "Workshop": "https://www.facebook.com/events/908389935879934/" }]
@@ -396,9 +367,9 @@ projects: [
 		title: "A coffee, thoughts included",
 		description: "A question was printed out and spread on tabletops in a caffee, asking simply \"What is your Lepa gesta to sustain earth?\". Gestures of environmentally friendly actions were collected in origami boxes during Earth Day 2015 and mapped to a poster. Poster design was later upcycled to a SVG component.",
 
-		place: "Kino Šiška", "city": "Ljubljana, Slovenia",
+		place: "Kino Šiška", city: "Ljubljana, Slovenia",
 		timespan: {
-			from: "April 22, 2015 11:30", to: "April 22, 2015 17:30"},
+			from: "April 22, 2015 11:30", to: "April 22, 2015 17:30" },
 
 		outcomes: [
 		{ "Public event": "https://www.facebook.com/events/359624264236231/" }]
@@ -407,7 +378,7 @@ projects: [
 	]
 },
 
-{ 	
+{
 	namespace: 'leap-gesture',
 	sector: 'clean-tech',
 
@@ -420,22 +391,24 @@ projects: [
 	waystones: [
 
 	0: {
-	"Doing at service jams": [
+	"Doing at service jams": [ // L:422 before indentation mod
 
 		"Prototyping at Global Government Jam, on topic of sustainability and inclusive economies, to enable sharing time and skills for freelancers.",
 		
 		"Integrating #LeapGesture with Global Sustainability Jam and testing with GSusJam attendees, having assigned a mission to map short descriptions of actions, aligned with their projects' values (or the event itself).",
 
-		"Attending Global JamJam Camp, in an effort to integrate (non-monetary) meta data of decision making, at a place where Global Service Jam hosts join forces to grow the format and sync each other further. Presenting a decent prototype to a crowd of related service designers at a vote to receive moreattention at the camp."
-
-	],
+		"Attending Global JamJam Camp, in an effort to integrate #LeapGesture's potential for live online insight to decision making at the Global Jam stage. Global Service Jam hosts meet in person to sync and join forces on a year to year basis to grow the format, applying ideas and prototype models with a crowd that can upvote suggestions for further consideration."
+	]},
 
 	1: {
-	"Fine gesture to migrants ... At Grounded festival, December 2015, main theme that took place was Autonomy of migration. Stemming from there, the project’s purpose was established to inquire for and reflect upon the mutual exchange in an intercultural setting": 
+	"Fine gesture to migrants ... At Grounded festival, December 2015, main theme that took place was Autonomy of Migration. Stemming from there, the project’s purpose was established to inquire for and reflect upon the mutual exchange in an intercultural setting": 
 	[ "Accommodation", "Events and gatherings", "Work", "Food", "Clothing" ],
 
-	"Website mockup released ... A communication tool was used to establish interest for a workshop format. In the months to follow a general web platform schema and a read-only API was developed, whereas further programming was stalled until further advances in rapid development; to enable a broad list of services, transparently and securely.":
-	[ "https://drive.google.com/open?id=1ln8z6rq3Ai2SXwH_CyIoUEoHJefEQEUm" ],
+	"A communication tool (a website mockup) was very briefly designed to establish interest for a workshop format. In months to follow, a general web platform database schema and a read-only API was developed, whereas programming was stalled until further advances in rapid development (mastering JavaScript on web frontend); to enable a broad list of services, securely and transparently, with migrants taking on the role of service designers.":
+	[ 
+		"https://drive.google.com/open?id=1ln8z6rq3Ai2SXwH_CyIoUEoHJefEQEUm",
+		"https://github.com/fairshift/node-rhizome/tree/master/API%20(PHP)%20%5Bdiscontinued%2C%20reference-only%5D",
+		...flags.offline ],
 
 	"Imaginarium of Goodwill Gesture ... A workshop was held to test reflections with visitors at Transforma festival, a day after a public panel on possibilities of alternative economies. A blank paper wireframe, that was to take meanings in group and invite stories from there on, instead took upon the modern, much needed principles. Interestingly, was it a sense of platform capitalism in an alternative space... Conversation enlivened just after the formalities closed with an invitation to stay and have a chat.": {
 
@@ -446,13 +419,13 @@ projects: [
 	},
 
 	2: {
-	"Social inter-media prototypes ... Stemming from previous work, integrations with local environment were researched and applicable outcomes published, with comments, to online social media channels.": ["https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/... Gotcha, it's the reason: #leapgest.v32svgn.jsonion"],
+	"Social inter-media prototypes ... Stemming from previous work, integrations with local environment were researched and applicable outcomes published (with comments included), to online social media channels.": [ ...flags.offline ],
 
-	"Facebook cover photos": [
+	"Facebook cover photos": [...flags.offline,
 		"https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/15400501_140152156471228_5073762634429398947_n.jpg?oh=f73a791c0bad9136d5db1b86c5a1a129&oe=5AD973CD",
 		"https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/15400501_140152156471228_5073762634429398947_n.jpg?oh=f73a791c0bad9136d5db1b86c5a1a129&oe=5AD973CD",
 		"https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/15400501_140152156471228_5073762634429398947_n.jpg?oh=f73a791c0bad9136d5db1b86c5a1a129&oe=5AD973CD" ]
-	}
+	}]
 },
 
 
@@ -462,27 +435,27 @@ projects: [
 	description: "Sixpo is a 3 day interactive event with an aim to identify social potencial, evolving social innnovation and encouraging active participation."
 },
 
-{	
-	type: ['startup', 'hrm', 'ssas', 'platform'],
+{
+	type: ['startup', 'hrm', 'saas', 'platform'],
 	namespace: 'cofinder-eu',
 
-	title: "coFinder.eu",
-	sector: "startups",
+	title: "coFinder",
+	sector: 'startups',
 	description: "Helping assemble startup teams online and at networking events",
 	since: 2013,
 
 	waystones: {
 
-		0:
-		"Presenting to interested parties \r\n\r\n A presentation regarding an online platform was held in an open coworking area, to inform members of the creative class. Hosting an online CV and helping find project partners were identified as emergent needs.",
+	0:
+	"Presenting to interested parties \r\n\r\n A presentation regarding an online platform was held in an open coworking area, to inform members of the creative class. Hosting an online CV and helping find project partners were identified as emergent needs.",
 
-		1:
-		"Project team assembled ... Fueled by enthusiasm of the startup movement, a team was assembled around the idea that technology and creativity can bring people to work together.",
+	1:
+	"Project team assembled ... Fueled by enthusiasm of the startup movement, a team was assembled around the idea that technology and creativity can bring people to work together.",
 
-		2:
-		"Web service for networking creative individuals ... Developing a web application for creative individuals, web service was built reusing existing frameworks (Yii and Bootstrap), inspired to solve common problems of ambitious creative people.",
+	2:
+	"Web service for networking creative individuals ... Developing a web application for creative individuals, web service was built reusing existing frameworks (Yii and Bootstrap), inspired to solve common problems of ambitious creative people.",
 
-		3: {
+	3: {
 		outcome: { 
 		"Networking events": 
 		"Two \"Assemble your team\" startup networking events at @Hekovnik HQ in 2014." },
@@ -497,7 +470,7 @@ projects: [
 		}
 	},
 	links: [
-		{ url: "https://cofinder.eu", online: true }]
+		{ url: 'https://cofinder.eu', online: true }]
 },
 
 {	
@@ -508,39 +481,40 @@ projects: [
 	caption: "Tony Hawk’s Pro Skater online gaming community",
 	sections: ["Get There challenges", "Videos", "Community Collaboration video", "Info & In-game techniques", "See Who’s Online"],
 
-	url: "http://thlive.net",
+	url: 'http://thlive.net',
 	active: { from: 2004, to: 2009 },
 	online: false,
 
 	team: { 
 		tag: ".tLT",
 		members: [ ...flags.pending,
-			{ namespace: "blazbrmnn", roles: ["team-member", "coder", "moderator", "ideator"] },
+			{ namespace: 'blazbrmnn', roles: ['team-member', 'coder', 'moderator', 'ideator'] },
 		]
 	},
 
 	waystones: {
-		0: 
-		"tLT team had picked up and recreated a new website upon thuglive.com (formerly thelinetub.com) ceased operations.",
+	0: 
+	"tLT team had picked up and recreated a new website upon thuglive.com (formerly thelinetub.com) ceased operations.",
 
-		1: {
-		"Planning for site upgrades ... Besides the daily pwn, some members of the tLT team and of it's community would also discuss and plan upgrades to the website.": 
-		[ "In-game", "Messenger", "Forums" ],
+	1: {
+	"Planning for site upgrades ... Besides the daily pwn, some members of the tLT team and of it's community would also discuss and plan upgrades to the website.": 
+	[ "In-game", "Messenger", "Forums" ],
 
-		"New sections, we said \n\n In addition to the previously established sections (Forums, Videos and Get There Challenge sections), new features were planned and established – a community curated information section on in-game techniques, a community video project section and a way to let others know who is currently playing online.":
-		[
-			"Info & In-game techniques", "See Who’s Online", "Community Collaboration video" ]
-		},
+	"New sections, we said \n\n In addition to the previously established sections (Forums, Videos and Get There Challenge sections), new features were planned and established – a community curated information section on in-game techniques, a community video project section and a way to let others know who is currently playing online.":
+	[
+		"Info & In-game techniques", "See Who’s Online", "Community Collaboration video" ]
+	},
 
-		"Peak statistics \r\n\r\n THLiVE.NET hosted about 1000 visitors per day during it's peaks.": 
-		[ "1000 visitors / day" ],
+	"Peak statistics \r\n\r\n THLiVE.NET hosted about 1000 visitors per day during it's peaks.": 
+	[ "1000 visitors / day" ],
 
-		2:
-		"Website was shut down in 2009, which coincides with another skate video game by Electronic Arts.",
+	2:
+	"Website was shut down in 2009, which coincides with another skate video game by Electronic Arts.",
+	
 	},
 
 	links: [
-		{ archive: "https://web.archive.org/web/*/thlive.net" }]
+		{ archive: 'https://web.archive.org/web/*/thlive.net' }]
 }
 
-]
+] }};
