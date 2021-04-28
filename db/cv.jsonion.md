@@ -1,3 +1,14 @@
+## Don't hold the door on my resume
+… Here, a piece I've been working on since 2016. While the "jsonion" library and indexing are still trivially implemented, I put more effort to indentations and code style (regarding some quirks that I found in mobile code editor apps, namely a Sublime Text port).
+
+While it's true that big names in software move consistently and in that the decisions matter, brand-free JSON is the defacto layer for storing and sharing schematized data on the web. It's like managing my own data isn't allowed, when I want to find specific people (see "profile #blazbrmnn interests").
+
+Prototyping is just simplified, when you don't need the user interface immediately... Outcomes are just that much more representative (and data isn't replicated infinitesimally), when a document retains it's value through time...
+
+*GitHub somehow doesn't do me a "Word wrap" (or is it "Line wrap"), when that really is a good idea. Maybe there's a "Gamification" goal on the company agenda, stating that there should be triggers that incline people to either ... a) download or "git clone" a repository, or b) go design an interface for the contained data.*
+
+```javascript jsonion
+
 import { index, Types, Actions, regex, flags, auth } from 'jsonion/raw'
 export default var json = { ion: 'cv', languageCode: 'en_EN', db: { 
 
@@ -391,7 +402,7 @@ projects: [
 	waystones: [
 
 	0: {
-	"Doing at service jams": [ // L:422 before indentation mod
+	"Doing at service jams": [ // L:422 before updating indentation
 
 		"Prototyping at Global Government Jam, on topic of sustainability and inclusive economies, to enable sharing time and skills for freelancers.",
 		
@@ -518,3 +529,5 @@ projects: [
 }
 
 ] }};
+
+```
