@@ -1,1 +1,218 @@
 
+export default var jsonion_diff = {
+    document: {name: "drop-in.svg", cksum: null},
+  __newLine: {attr: true},  // Variable names in short
+  reducedKey: {},
+
+  // Applying code modifications to recurring elements (non-indexed)
+  modifyNewElement: {
+    'rect': { width: 88, height: 88,
+      1: 'id="card-{n}-"',
+      2: 'width={this.width} height={this.height}'
+    }
+  },
+
+  //  Attributes are rearranged within containing XML tag 
+  shuffleAttr: { __newLine: false,
+    'svg': { 1: [ 'id', newLine, 'onload'] },
+    'text': {
+       0: ['id', 'xml:space'],
+
+      'x': ['x', 'y'],
+      remove: {'tspan': 'id'} 
+    }
+  },
+
+  // Specific elements or attributes are moved to a designated container
+  move: {},
+
+  // Some elements or attributes are removed
+  remove: {
+    'svg': [
+
+...flags.after('xmlns'),
+'xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"',
+'xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"',
+...Types.newLine,
+'inkscape:version={"0.92.4 (5da689c313, 2019-01-14)"}',
+'version="1.0"'
+
+    ],
+    'metadata': 'id={"metadata6265"}',
+    'sodipodi:namedview': [
+
+'pagecolor={"#ffffff"}',
+'bordercolor={"#666666"}',
+'borderopacity={"1"}',
+'objecttolerance={"10"}',
+'gridtolerance={"10"}',
+'guidetolerance={"10"}',
+'inkscape:pageopacity={"0"}',
+'inkscape:pageshadow={"2"}',
+'inkscape:window-width={"1646"}',
+'inkscape:window-height={"832"}',
+'id={"namedview27"}',
+'showgrid={"false"}',
+'inkscape:zoom={"0.57615551"}',
+'inkscape:cx={"128.41907"}',
+'inkscape:cy={"520.21696"}',
+'inkscape:window-x={"-11"}',
+'inkscape:window-y={"-11"}',
+'inkscape:window-maximized={"1"}',
+'inkscape:current-layer={"footer"}',
+'inkscape:document-rotation={"0"}',
+'inkscape:lockguides={"true"}',
+
+    ],
+    'text tspan': [
+      'sodipodi:role={"line"}',
+      { 'style': [
+
+'font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;',
+'font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;',
+'text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;',
+'-inkscape-font-specification:{this.font-family};'
+'text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;',
+'stroke:none;stroke-width:0.264583;'
+
+      ]}
+    ],
+    'g#footer': { 'inkscape:': {
+      'label={"Footer caption"}'
+      'groupmode={"layer"}'
+    }},
+    'style': 'id'
+  }
+}
+
+export const wrapHTML = (args = { body: '', withComments: false, height: 100, width: 50 }) => {
+
+var comment = (!args.withComments) ? '' :
+`
+    <!-- Process the embedded XHTML if the requiredExtensions attribute
+         evaluates to true (i.e., the user agent supports XHTML
+         embedded within SVG). -->
+`
+
+return 
+`${comment}
+    <foreignObject width="${args.width}" height="${args.height}"
+                   requiredExtensions="http://www.w3.org/1999/xhtml">
+      <!-- XHTML content goes here -->
+      <body xmlns="http://www.w3.org/1999/xhtml">
+${args.body}
+      </body>
+    </foreignObject>
+`
+}
+
+
+export const SVGwrap = ( args = {
+
+	height: "300", width: "400"
+
+	withComments: false,
+
+	body: '',
+	rdfs: '',
+	scripts: [],
+
+	bootFunction: 'boot', bootFnArgs: {},
+
+} ) => {
+
+var comments = (!args.withComments) ? '' : [
+`  <!-- The 'switch' element will process the first child element
+       whose testing attributes evaluate to true.-->`,
+// … 0, 1 …
+`     <!-- Else, process the following alternate SVG.
+         Note that there are no testing attributes on the 'text' element.
+         If no testing attributes are provided, it is as if there
+         were testing attributes and they evaluated to true.-->
+    <text font-size="10" font-family="Verdana">
+      <tspan x="10" y="10">Here is a paragraph that</tspan>
+      <tspan x="10" y="20">requires word wrap.</tspan>
+    </text>`
+]
+
+return 
+`<svg xmlns = "http://www.w3.org/2000/svg" onload="${bootFunction}(${bootArgs})" width="${width}px" height="${height}px" viewBox="0 0 ${width} ${height}">
+
+${comments[0]}
+  <switch>
+
+${body}
+
+${comments[1]}
+
+  </switch>`
+}
+
+
+/*
+
+https://www.facebook.com/blablaz?fref=nf&__tn__=%2Cdm-R-R-R-R-R-R-R-R&eid=ARBSEysJVtbmA_nXmFcViDuuUQDZPhb7BVEXQdDRmRuW8MwilnP0YxNXzi00a7iRFUfontQmi6ndgT2K
+
+  "Sprayout" ob filozofskem maratonu – ali telo znanja v zraku
+  (17.11.'18 · @BlažBeuermann › Znanstvena redakcija RŠ · Ljubljana)
+
+  V zapisu o seriji dogodkov v novemberskem tednu 11.-16. bom na kratko zabeležil seznam predavanj, ki sem jih poslušal in popisal (zvečine v celoti), vendar bom omenil le tiste, kjer sem kaj pridal. Na tej podlagi pa bom, zavoljo ideje, da se je ta tekst pravzaprav pisal na licu mesta, v dialogu ter z verbalnimi intervencijami, k vsakemu predavanju dopisal stališče (parafrazirano), ki sem ga v prostor diskurza s komentarjem takrat podal sam. Tako so tu obeležena le tista predavanja, kjer sem nekaj doprinesel tudi sam. Kavo sem si plačeval sam, četudi...
+
+  Seveda, lahko bi poleg zapiskov predane snovi in poustvarjanju svojih komentarjev pisal tudi o komentarjih iz publike – a kdo bo v takem lagodju potem pomislil verificirati video posnetke pomembnih dogodkov po podobnem postopku?
+
+
+  # (R)evoliucija znanosti in tehnologije
+  ( 12.11.'18 )
+
+  Interdisciplinarnost, etika, matematizacija in tudi izolacija ob znanstvenem in tehnološkem napredku. Študent molekulske funkcionalne biologije poleg pokrivanja trendov in vpetosti znanosti v družben ustroj omeni tudi manjko etične razmisleka v okviru študija. Mar je mogoče, da so ravno zaradi naslova tega predavanja [(R)EV…] vsi naslovi v napovedniku dogodka zapisani z velikimi črkami?
+
+  ‹ (@BB) Ali je možno, da ob ponovnem grajenju teorije o delovanju uma v nevroznanosti(h) (ter hkratnemu negiranju ljudske psihologije želja), pride do poistovetenja in usklajevanja delovanja ljudi z normalo biokemičnih procesov - ali se tako zgodi nekak prehod v realnost, kjer je prosta volja bolj determinirana in manj prosta, v "blockchain realnost", kjer je morebitna duša bolj zasidrana v enem determinističnem toku ter prosta volja manj prehaja med različnimi paralelnimi časovnicami v mnoštvu bližnjih vesolij?
+
+  ‹ (@BB) Nedavno sem ugotovil, da obstaja kult zapriseženih karnivorjev med ljudmi, ki na podlagi znanstvenih polpodatkov verjamejo (in to prepričanje tudi pretvorijo v dobro počutje), t.j. da je takšna prehrana bolj zdrava. Njihova izbira zaradi dejstva, da živali proizvajajo (kompleksnejše) proteine, ki jih rastline ne, izgleda na prvi pogled tudi povsem legitimna in za razloj človeškega telesa nujna izbira - sočutje zagotovo neomajno vzbudijo redki a obstoječi otroci, ki zaradi napačnih izbir staršev in okolice trpijo posledice na svojem telesu.
+  Zanimivo bi bilo izvedeti več glede osnovnih proteinov, ki so v celoti dostopni v zelenjavi, ter še posebej glede določenih redkejših sestavljenih proteinov živalskega izvora; kje v telesu so potrebni?
+
+  ‹ (@BB) V luči objave hrvaške veje aktivistične organizacije Direct Action Everywhere (DxE) z naslovom "Veganism can't be moral baseline, activism is" (veganstvo ne more biti moralna podlaga, to je lahko aktivizem) sem svoj odziv zapisal tako v spletnem komentarju, svoje videnje pa sem podal tudi na dogodku, rekoč (približno): Veganstvo je moralno bolj nevtralno kot aktivizem; če se prehranjujem vegansko in živim kot vegan, potrebujem vedeti manj, da sem lahko neškodljiv (in moralen). Če nihče nikomur ne povzroča škode zavestno (komunicirati pa znamo), od kod potem potreba po izrazu morale kot znanja in metodike?
+  Implicitno se da razbrati, da gre za aktivizem, ki ni strikno veganski; če tu vključimo tezo, da bo upravičevanje in relativizacija tudi minimalno škodljivih aktivnosti imela posledice v etičnem (razumevanju) in moralnem (uveljavljanju), potem potencialno sledi, da bo neveganska aktivistična morala vsaj malo izkrivljena in ne-nevtralna. Čeprav... Vrtičkarji, vrtičkarji.
+
+
+  # Je znanstvena revolucija še vedno možna?
+  ( 12.11.'18 17:10 )
+
+  ‹ (@BB) Ko ste naprimer omenili redukcijo, ki jo je izvedel Kopernik v kozmologiji (iz 80+ na ~40 epiciklov)... Se vam zdi, da se je v namen izboljšav pomnenja oz. umeščanja znanj načrtno uporabljalo neizkoriščene kategorije - na mestih, ki morda vsaj z današnjega vidika temu niso namenjena (jasni logiki navkljub)? Kot npr. pri črki "e" in izgovorjavi "ə", ki pozornemu opazovalcu mogoče pomeni obliko ustne votline ob uporabi.
+
+
+  # Brez zelene ne bo nobene
+  ( 13.11'18 14:40 - 16:20 )
+
+  QR koda: Prepis predavanja
+  ( src: facebook.com/events/1134412070065426?view=permalink&id=1139774772862489, ref: [ peta.org/blog/360-million-people-vegan-americans, peta.org/?s=get+naked ])
+
+  Poleg zapisanega sem v komentarju, nanašajoč se na davčno politiko kot sredstvo regulacije, umestil koncept oportunitenih stroškov, ki dano aktivnost (npr. pridelava sirov in jajc) postavi ob bok neizvedeni aktivnosti (npr. pridelava fižola in buč), ter potencialno izgubo uokviri kot oportunitetni strošek izvedene aktivnosti.
+
+
+  # Matematika, govor, zgodovina: študija nekega dogodka
+  ( 15.11.'18 14:40 - 15:30 · @MatijaPušnik )
+
+  ‹ (@BB) Nanašajoč se na zavestno izbiro posameznika in na kontekst, kam usmeriti fokus in razumevanje - v (bolj) globalno, ali v nišno (nacionalno)... S takšnimi izbirami se posameznik zaveže v nek zgodovinski kontekst, ki vključuje prelome (in tako zaradi neizvršenih ali zapadlih dolžniških razmerij in zgodovinskih krivic izpostavi sebe kot tudi svoje bližnje karakterizaciji - sicer tudi pozitivni). Npr.: mi smo tisti, ki uporabljamo "et (fr.)" za konjunkcijo; mi smo tisti, ki uporabljamo "bromus (gr.)" za oznako kemijskega elementa; mi smo tisti, ki rečemo "breathe (en.)" - Br pa je kot He, zavit v nekaj dodatnih orbital.
+
+  ‹ (@MP) Zamejena simbolika pogosto daje vtis univerzalnosti - vsebuje navezave na širši kontekst.
+
+
+  # Althusser in epistemološki rez
+  ( 15.11.'18 15:30 )
+  
+  ‹ (@BB) Ko je govora o znanstvenosti in ponovnem koncipiranju izhodišč jedra marksizma, ki je po funkciji aparat za zajemanje zgodovine, seveda inherentno vezan na merjenje in beleženje... Kdaj in kaj se zajema, pod kakšnimi pogoji in naknadnimi razmisleki ter s tem dodanimi pomeni?
+  Kamere v momentu zajamejo tudi težje opisljivo neverbalno, tako govorcev in občinstva (npr. kakšen izraz kažejo, ko pošljejo Tweet:smile:); marksizem pa se npr. osredotoča na materialna razmerja skozi čas in žep. Marksizem iz teorije izloča metafizično, "dejavu" pa se zgodi v trenutku in večinoma niti ne pusti trajnega spomina.
+  Primer implementacije sem sicer podal na mestu, a...
+
+
+  # Lenin in revolucija
+  ( 15.11.'18 16:20 )
+
+  ‹ (@BB) Vzeti nazaj produkcijska sredstva, se pravi seks. Kaj povedati o informacijski (a)simetriji - kdo bo še naprej nekaj odločal namesto nekoga?
+  O informacijski tehnologiji se da povedati marsikaj: začenjši pri bolj egalitarno naravnanem koncu, obstaja open-source ali odprtokodna tehnologija, ne glede na to pa uporabniki in administratorji le-te upravljajo z javnimi kot tudi zasebnimi podatki.
+  Seveda bi bila izmenjava podatkov veliko lažja, če bi ne bile podatkovne baze in aplikacije, ki jih krmilijo, osnovane na diverziteti znanstvenih in intuitivnih modelov, ki producirajo in interpretirajo podatke. Ti stroji, četudi se včasih iz podatkov učijo sami (namesto nas), vselej uporabljajo paleto človeških in programskih jezikov in protokolov za delo s podatki.
+  "Data-driven" pristop, ki ga danes že uporabljajo večja in tudi manjša podjetja, opeva možnost odločanja z zbranimi informacijami. "Blockchain" pa daje možnost distribuirane javne hrambe podatkov ali šifrantov zasebnih podatkov, v obeh primerih pa so podatki zagotovljeno pristno časovno umeščeni v verigo glede na vnos (poleg "proof of work" protokola pa "proof of stake" ob neanonimnosti in dovoljšni informiranosti zagotavlja pristnost vsebin) - stična točka med raznimi zainteresiranimi, s konsenzom, da se podatka za nazaj ne da spremeniti (oziramo da vsaka sprememba pusti overljivo sled). 
+  Recimo, da informacije postajajo bolj pretočne in da se navezave hranijo, s temelji v kavzalnosti in etiki... Ali je ob zadostno širokem kot tudi poglobljenem poznavanju neke tematike ter tokov dobrin in storitev moč pričakovati, da se medosebni ter medrazrezni boj seli navznoter? Po svoji vesti: to so moji učinki, to so moje možnosti, izbiram lahko sam_a. Bi potem vsi izbrali trajnostno in nenasilno pot?
+
+*/
