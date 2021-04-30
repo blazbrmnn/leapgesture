@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+  Why V32SVGn?
+  Image of web contents for lossless offline archives and clean presentation of knowledge, kept on storage mediums in your physical reach - out of hands of central online authorities' manipulation.
+
+  Why not use Hyper Text Markup Language (HTML) or Portable Document Format (PDF)?
+
+  What HTML, PDF and SVG all have in common is JavaScript, which functions with an appropriate interpreter (software). HTML and SVG both have open source code, readable and amendable, while PDF does not.
+
+  But the key paradigm shift enabled by V32SVGn is the following...
+  HTML and PDF rely on externally guided data schemas, formatting rules and character encoding & design. In contrast, the V32SVGn project broadens the possibility to upgrade particles of the forementioned codifications by embracing SVG's core - dynamic vector shapes - and by adding components for manageable and trackable innovation and reflection - in p(e)ace of the peer-to-peer way of interaction.
+
+-->
+<svg
+   id="SVGRoot"
+   onload="init()"
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   
+   sodipodi:docname="drop-in.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)"
+   width="183mm"
+   height="268mm"
+   viewBox="0 0 183 268">
+  <sodipodi:namedview />
+  <metadata>
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/Image" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="footer"
+     inkscape:label="Footer caption">
+    <text
+       id="logotype" xml:space="preserve"
+       style="font-size:14.8167px;font-family:Verdana;"
+       x="-28.012566" y="31.34407"><tspan
+         id="templea"
+         x="20.663347"
+         y="88.643211">Templea<tspan style="font-size:25.4px"
+   id="jsonion">.</tspan>jsonion</tspan></text>
+    <text 
+       id="text223" xml:space="preserve"
+       style="font-size:7.44059px;line-height:1.25;font-family:ubuntu;"
+       x="56.53299" y="94.794479"><tspan
+         style="font-family:'Courier New';"
+         x="56.53299" y="94.794479">R<tspan
+   style="font-size:4.93889px">u(i)n</tspan>  &amp;  M<tspan
+   style="font-size:5.64444px">anage</tspan></tspan></text>
+    <text 
+       id="text207-7" xml:space="preserve"
+       style="font-size:14.8167px;line-height:1.25;font-family:Verdana;opacity:0.2;"
+       x="20.917459" y="88.893486"><tspan
+         style="font-family:Verdana;"
+         x="20.917459" y="88.893486">Templea<tspan
+   style="font-size:25.4px">.</tspan>jsonion</tspan></text>
+    <g
+       id="card-1"
+       inkscape:label="Card 1">
+      <rect
+         id="card-1-up"
+         width="88" height="88"
+         x="1" y="1"
+         style="opacity:0.2" />
+      <rect
+         id="card-1-b"
+         width="88" height="88"
+         x="90" y="1"
+         style="opacity:0.2;fill:#666666;fill-opacity:1;stroke-width:0.264583" />
+    </g>
+    <g
+       id="card-2"
+       inkscape:label="Card 2">
+      <rect
+         id="card-2-up"
+         width="88" height="88"
+         x="1" y="90"
+         style="opacity:0.2;fill:#666666;fill-opacity:1;stroke-width:0.264583" />
+      <rect
+         id="card-2-b"
+         width="88" height="88"
+         x="90" y="90"
+         style="opacity:0.2;fill:#666666;fill-opacity:1;stroke-width:0.264583" />
+    </g>
+    <g
+       id="card-3"
+       inkscape:label="Card 3">
+      <rect
+         id="card-3-up"
+         width="88" height="88"
+         x="1" y="179"
+         style="opacity:0.2;fill:#666666;fill-opacity:1;stroke-width:0.264583" />
+      <rect
+         id="card-3-b"
+         width="88" height="88"
+         x="90" y="179"
+         style="opacity:0.2;fill:#666666;fill-opacity:1;stroke-width:0.264583" />
+    </g>
+    <text id="license" 
+       xml:space="preserve" style="font-size:3.52778px;line-height:1.25;font-family:ubuntu;"
+       transform="rotate(90)"><tspan
+         style="font-family:'Courier New';stroke-width:0.264583"
+         x="-267.11011" y="181.46324">Creative Commons, jsonion#leapgest, 2020s</tspan></text>
+    <text id="dimensions"
+       xml:space="preserve" style="font-size:3.52778px;line-height:1.25;font-family:ubuntu;"
+       x="-1.4569449" y="181.15869"
+       transform="rotate(90)"><tspan
+         style="font-family:'Courier New';text-align:end;text-anchor:end;">Dimensions: DVD cover ; 3x2 Post-it notes (each of a standard business card width)
+</tspan></text>
+  </g>
+  <!-- 
+
+  # Styling poems section
+
+  -->
+  <defs id="defs22">
+    <style
+       type="text/css"
+       id="style20"><![CDATA[
+
+.socIcon g {
+        fill:red;
+}
+
+  ]]></style>
+  </defs>
+  <!--
+
+  # SVG file, simplified losslessly: Keeping it simple for the eyes to come
+  ( Graphic Design programs store their metadata, alright... Node.js to move it out of sight and back, again )
+
+  -->
+  <script type="text/javascript">
+
+  var jsonion_diff = { 
+    document: {name: "drop-in.svg", cksum: null},
+  __newLine: {attr: true},
+
+  // Variable names in short
+  reducedKey: {},
+
+  // Applying code modifications to recurring elements (non-indexed)
+  modifyNewElement: {},
+
+  //  Attributes are rearranged within containing XML tag 
+  shuffleAttr: {},
+
+  // Specific elements or attributes are moved to a designated container
+  move: {},
+
+  // Some elements or attributes are removed
+  remove: {}
+}
+</script>
+<!-- 
+
+  # Weaver's knot
+
+  For a future git commit:
+    xml namespaces and qnames as the complexity to address
+    {stats | ... on reduced amount of characters / lines are printed}
+
+-->
+</svg>
