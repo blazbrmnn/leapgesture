@@ -1,9 +1,10 @@
 ## Don't hold the door on my resume
-… Here, a piece I've been working on in 2016 (before having arrived nowhere at all). While the "jsonion" library and indexing are merely trivially implemented (awaiting work), aiming for clarity, I put more effort to indentations and code style (also addressing some quirks that I found in mobile code editor apps, namely a Sublime Text port).
+… Here, a piece I've been working on in 2016 (before having arrived nowhere at all). While the "jsonion" library and indexing are merely trivially implemented (awaiting work), aiming for clarity, I put more effort to indentations and code style (also addressing some quirks that I found in mobile code editor apps, namely a Sublime Text port, oh and the word/line wraps).
 
 While it's true that big names in software move consistently and in that the decisions matter, brand-free JSON is the defacto layer for storing and sharing schematized data on the web. It's like managing my own data isn't allowed, when I want to find specific people (see "profile #blazbrmnn interests").
 
 Siding with the modern JavaScript web stack, prototyping is thus further simplified when you needn't spend time on additional complexities (implementing data flow, from inputs components to a strict database schema). Outcomes are just that much more representative, when a document retains it's value through time (and data isn't replicated infinitesimally) ...
+
 
 ```javascript jsonion
 
@@ -17,8 +18,8 @@ export default var json = { ion: 'cv', languageCode: 'en_EN', db: {
 ...index.link('namespace', flags.exclude( /\s+/ ),
 	Types.smallCase, Types.hashtag, Types.camelCase
 ),
-...flags.delimit('.activity, .activities', [/;/]),
-...Types.subset('array', 'string', 'integer', 'arrayOfStrings', {'dateTime': ['unixTimestamp', 'en_EN']}),
+...flags.delimit('(.activity, .activities)', [/;/]),
+...Types.subset('array', 'string', 'integer', 'arrayOfStrings', {'dateTime': ['en_EN', 'unixTimestamp']}),
 
 profile: [
 
@@ -82,7 +83,7 @@ profile: [
 	"#LeapGest project was grounded in arguments": [
 		'http://igg.me/at/leapgest18',
 		'https://github.com/jsonion/leapgest/blob/master/screenshot-developer.twitter.com-2018-12-13-16-26-12.png',
-		{ 'https://jstr.co/#leapgest/fb-blablaz-anonymous-voiceless': flags.offline }
+		{ 'https://jstr.co/#leapgest/fb-blablaz-anonymous-voiceless': ...flags.pending }
 	]},
 
 	activity: "Transcribing speech real-time ; Commenting at panels ; Preparing summary of my own comments ; Formatting one transcript in AI-augmented style and posting to event page (as [Fb]/santappl) ; Publishing my comments as project argumentation in a large vegan group"
@@ -123,7 +124,7 @@ profile: [
 	namespace: 'leap-gesture',
 
 	programme: "Leap Gesture × Street Player (self-managed)",
-	genres: [ 'dnb', 'dubstep', 'trance', 'house' ],
+	genres: [ 'dnb', 'dubstep', 'trance', 'house', 'progressive' ],
 	since: 2018,
 
 	activity: "Stepping out to dance",
@@ -163,10 +164,10 @@ profile: [
 	type: [
 		'service-design', 'networking', 'proactive-caffee', 'lean-strategy' ],
 	events: [
-	"Pro-active Caffee",
 	"Start-Up Weekend",
+	"Pro-active Caffee",
 	"Reinovator",
-	"Social innovation exposition"]}
+	"Social innovation exposition" ]}
 
  ]},
 
@@ -190,7 +191,7 @@ profile: [
 		'Web development': [
 		'javascript-es6', 'commonmark', 'graphql', 'react', 'redux', 'json', 'jsonion', 'sql', 'json-schema', 'svg', 'microdata' ]},
 
-	{	
+	{
 		'Copywriting': ['Social media campaigns', 'Articles – How-to / DIY'],
 		'Technical writing': ['React.jsonion on Facebook', 'Commonmark', 'Code documentation'] },
 
@@ -262,21 +263,21 @@ profile: [
 	active: 2012,
 
 	activity: [
-	{	
+	{
 		task: 'Web development', // /p/ing
 		methods: ["Agile software development"],
 		technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL', 'oAuth'] },
 
-	{	
+	{
 		task: 'Application interface design',
 		toolset: ['Photoshop', 'Instagram'],
 		results: ["Web interface", "Mobile app interface", "Social media design elements"] },
 
-	{	
+	{
 		task: 'Customer research',
 		methods: ['User interviews', "Lean startup methodology"] },
 
-	{	
+	{
 		activity: 'Business development',
 		methods: ["Agile software development"],
 		results: ['Seminar paper', 'Business model canvas'] }
@@ -330,7 +331,7 @@ projects: [
 	"Finding love and clothes isn't all the same - though friends and couples can also fit one another",
 	"To an outsider a relationship is a mist, and likewise building an application for a fashion community takes guesswork. User feedback is weaver of strategic decisions that carve out the final product, code and design... All to leave glimpses of driving passions visible on the outside." ],
 
-	2: {	
+	2: {
 	"User interviews":
 	"Devising customer research and performing user interviews with around 50 fashion enthusiasts (somehow), aiming to better understand local caregiving community and to deliver a product market fit." },
 
@@ -343,7 +344,7 @@ projects: [
 	links: [ {...flags.offline}, {} ]
 },
 
-{	
+{
 	title: "Lepa gesta?",
 	description: [
 	"A contemporary collaboration was formed to produce understanding on ethical topics, developing ways to coexist and collaborate, steered by Zavod TiPovej! (tipovej.org, association for creative society). On several occasions and in different cities, a team of volunteers and menthors have invited active representatives of the youth to cocreate our ideas on a table desk, about life and Lepa gesta. Having created personas in groups, we had to observe with appreciation the leaps of change, stems of idealism, as valuably contained in an evolving, imperfect world.",
@@ -397,10 +398,10 @@ projects: [
 	"Amassed goodwill somehow finds ways around limitations of economic rationality (as in pocket depth), as volunteers, activists, housewives, start-up founders and donors side and gently push. Besides the catchy titles there's casual actions, symbolic and important pillars to understanding of human ethics and motivations for good deeds."
 	],
 
-	waystones: [
+	waystones: {
 
 	0: {
-	"Doing at service jams": [ // L:422 before updating indentation
+	"Doing at service jams": [
 
 		"Prototyping at Global Government Jam, on topic of sustainability and inclusive economies, to enable sharing time and skills for freelancers.",
 		
@@ -426,16 +427,16 @@ projects: [
 		outcomes: [
 			{ "Workshop prototype": "https://docs.google.com/document/d/1rmr3y3Ij9pr91PwWHwCPbFAArUlOauZxA6tjpiTwARI/view" }
 		]
-	},
+	}},
 
 	2: {
-	"Social inter-media prototypes ... Stemming from previous work, integrations with local environment were researched and applicable outcomes published (with comments included), to online social media channels.": [ ...flags.offline ],
+	"Intermedia prototypes ... Coming from previous research, social media integrations were published on contemporary timelines (with comments included, as comments to events).": {
 
 	"Facebook cover pictures": [...flags.offline,
 		"https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/15400501_140152156471228_5073762634429398947_n.jpg?oh=f73a791c0bad9136d5db1b86c5a1a129&oe=5AD973CD",
 		"https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/15400501_140152156471228_5073762634429398947_n.jpg?oh=f73a791c0bad9136d5db1b86c5a1a129&oe=5AD973CD",
 		"https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/15400501_140152156471228_5073762634429398947_n.jpg?oh=f73a791c0bad9136d5db1b86c5a1a129&oe=5AD973CD" ]
-	}}
+	}}}
 },
 
 
@@ -496,11 +497,12 @@ projects: [
 	team: { 
 		tag: ".tLT",
 		members: [ ...flags.pending,
-			{ namespace: 'blazbrmnn', roles: ['team-member', 'coder', 'moderator', 'ideator'] },
+
 		]
 	},
 
 	waystones: {
+
 	0: 
 	"tLT team had picked up and recreated a new website upon thuglive.com (formerly thelinetub.com) ceased operations.",
 
@@ -510,7 +512,7 @@ projects: [
 
 	"New sections, we said \n\n In addition to the previously established sections (Forums, Videos and Get There Challenge sections), new features were planned and established – a community curated information section on in-game techniques, a community video project section and a way to let others know who is currently playing online.":
 	[
-		"Info & In-game techniques", "See Who’s Online", "Community Collaboration video" ]
+		"Info & In-game techniques", "Who’s Online", "Community Collaboration video" ]
 	},
 
 	"Peak statistics \r\n\r\n THLiVE.NET hosted about 1000 visitors per day during it's peaks.": 
@@ -526,5 +528,36 @@ projects: [
 }]
 
 }}
+
+
+  /*\
+ /  
+/
+
+## "jsonion-ref": What can it mean?
+ …  in context of action calls on a data subset
+
+          //  ( .sort(), .map(), .filter(), ... )
+        //
+    */ const JSONION_ACTIONS = [
+"INDEX", "CHECKSUM", 
+];
+
+var d_b = {
+	assign( key, object, type = null ){
+		if (typeof this[key] === "undefined")
+			this[key] = {type, ...object}
+}},
+
+d_b.extend = function(child, parent) {
+	for (var property in parent.prototype) {
+    	if (typeof child.prototype[property] === "undefined") {
+        	child.prototype[property] = parent.prototype[property];
+    	}
+    }
+	return child; // … a class-like fn, adopted at github.com/stamen/modestamps
+},
+
+hm = ["H\{He", "He\{Li", "Li\{Be", "Be\{B"],
 
 ```
