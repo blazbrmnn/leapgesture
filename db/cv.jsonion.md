@@ -1,11 +1,9 @@
 ## Don't hold the door on my resume
-… Here, a piece I've been working on since 2016. While the "jsonion" library and indexing are still trivially implemented, I put more effort to indentations and code style (regarding some quirks that I found in mobile code editor apps, namely a Sublime Text port).
+… Here, a piece I've been working on in 2016 (before having arrived nowhere at all). While the "jsonion" library and indexing are merely trivially implemented (awaiting work), aiming for clarity, I put more effort to indentations and code style (also addressing some quirks that I found in mobile code editor apps, namely a Sublime Text port).
 
 While it's true that big names in software move consistently and in that the decisions matter, brand-free JSON is the defacto layer for storing and sharing schematized data on the web. It's like managing my own data isn't allowed, when I want to find specific people (see "profile #blazbrmnn interests").
 
-Prototyping is just simplified, when you don't need the user interface immediately... Outcomes are just that much more representative (and data isn't replicated infinitesimally), when a document retains it's value through time...
-
-*GitHub somehow doesn't do me a "Word wrap" (or is it "Line wrap"), when that really is a good idea. Maybe there's a "Gamification" goal on the company agenda, stating that there should be triggers that incline people to either ... a) download or "git clone" a repository, or b) go design an interface for the contained data.*
+Siding with the modern JavaScript web stack, prototyping is thus further simplified when you needn't spend time on additional complexities (implementing data flow, from inputs components to a strict database schema). Outcomes are just that much more representative, when a document retains it's value through time (and data isn't replicated infinitesimally) ...
 
 ```javascript jsonion
 
@@ -14,7 +12,7 @@ export default var json = { ion: 'cv', languageCode: 'en_EN', db: {
 
 // Parser instructions
 ...index.map('namespace', regex.subset({'[%%]': '*'}), // ...
-	'profile[s] # .(project, programme, event, workshop, training, organiser)[s] (namespace, title)? 	{Types.array}? {Types.string}'
+	'profile[s] # .(project, programme, event, workshop, training, organiser)[s] (namespace, title)? {Types.array}? {Types.string}'
 ),
 ...index.link('namespace', flags.exclude( /\s+/ ),
 	Types.smallCase, Types.hashtag, Types.camelCase
@@ -31,7 +29,7 @@ profile: [
   surname: "…",
  },
 
- email: "blazbrmnn@yahoo.com",
+ email: 'blazbrmnn@yahoo.com',
  website: "linkedin.com/in/blaž-…-249a261b1/",
 
  currentRoles: [
@@ -87,17 +85,17 @@ profile: [
 		{ 'https://jstr.co/#leapgest/fb-blablaz-anonymous-voiceless': flags.offline }
 	]},
 
-	activity: "Transcribing speech real-time ; Commenting at panels ; Preparing summary of my own comments ; Formatting one transcript in AI-augmented style and posting to event page (as [Fb]/santappl); Publishing my comments as project argumentation in a large vegan group"
+	activity: "Transcribing speech real-time ; Commenting at panels ; Preparing summary of my own comments ; Formatting one transcript in AI-augmented style and posting to event page (as [Fb]/santappl) ; Publishing my comments as project argumentation in a large vegan group"
 },
 
 {
 	workshop: "Non-violent communication moderation workshop",
-	organiser: { namespace: 'sl-moderators-assoc' },
+	organiser: { namespace: "sl-moderators-assoc" },
 	t: 2017 },
 
 {
 	training: "Proactive Caffee moderation training",
-	organisers: ['sl-moderators-assoc'],
+	organisers: ["sl-moderators-assoc"],
 
 	outcome: { certificate: true },
 	t: 2016 },
@@ -108,7 +106,7 @@ profile: [
 	organisers: [{ namespace: 'ti-povej' }],
 
 	activity: ["Public events (5)", "Raising awareness"],
-	outcome: 'https://igg.me/at/fairshift',
+	outcome: 'indiegogo.com/projects/lepa-gesta-virus-for-global-economy-leap-second#/',
 	t: 2015 },
 
 {
@@ -140,7 +138,7 @@ profile: [
 	type: ['entrepreneurial', 'conference', 'networking', 'party'],
 	time: '30th of April, 2019',
 	location: 'Zagreb, Croatia',
- 	activity: 'Organising an online giveaway: Covering expenses and accomodation for two people during a 3 day conference; Just breathing in city at night' },
+ 	activity: 'Organising an online giveaway: Covering expenses and accomodation for two people during a 3 day conference ; Just breathing in city at night' },
 
 {
  	organiser: 'Global Service Jam',
@@ -148,7 +146,7 @@ profile: [
    	events: [
    	"Sustainability Jam 2016 (Facebook only)", "JamJam Camp HQ 2016 (Alicante, Spain)",
    	"Sustainability Jam 2015", "GovJam 2015", 
-   	"XJam 2014 (Ljubljana)", "Culture Jam 2014 (Maribor)", "GovJam 2014"
+   	"XJam 2014 (youtu.be/ZwPXM_uL5Pc?t=3692)", "Culture Jam 2014 (Maribor)", "GovJam 2014"
    	],
    	t: "2014 - 2016" },
 
@@ -156,9 +154,9 @@ profile: [
 	title: "Challenging the Crisis (2016)",
 	type: ['advocacy', 'social-responsibility', 'journalism'],
 	locations: [
-		"Vienna, Austria",
-		"Brussels, Belgium",
-		"Ljubljana, Slovenia" ]},
+		'Vienna, Austria',
+		'Brussels, Belgium',
+		'Ljubljana, Slovenia' ]},
 
 {
 	t: 2014,
@@ -194,7 +192,7 @@ profile: [
 
 	{	
 		'Copywriting': ['Social media campaigns', 'Articles – How-to / DIY'],
-		'Technical writing': ['React.jsonion on social media', 'Commonmark', 'Code documentation'] },
+		'Technical writing': ['React.jsonion on Facebook', 'Commonmark', 'Code documentation'] },
 
 	{ 'Graphic design': ['Gimp', 'Inkscape', 'SVG'] },
 
@@ -230,10 +228,10 @@ profile: [
 	skills: [
 
 	{ 
-		"Web development": [
-		"HTML", "CSS", "Foundation",
-		"JavaScript", "jQuery", "Isotope.js", "Velocity.js", "fullPage.js", 
-		"PHP", "Wordpress", "PunBB" ]
+		'Web development': [
+		'HTML', 'CSS', 'Foundation',
+		'JavaScript', 'jQuery', 'Isotope.js', 'Velocity.js', 'fullPage.js', 
+		'PHP', 'Wordpress', 'PunBB' ]
 	}]
 },
 
@@ -247,7 +245,7 @@ profile: [
 	activity: [
 	{
 		task: "Web backend development",
-		technologies: ["PHP", "Yii", "MySQL"],
+		technologies: ['PHP', 'Yii', 'MySQL'],
 		outcomes: [
 		"Database schema and data model implementation", "Search matching algorithm (before scaling platform)", "Brand-free implementation (on subdomains)" ]
 	},
@@ -265,23 +263,23 @@ profile: [
 
 	activity: [
 	{	
-		task: "Web development", // /p/ing
+		task: 'Web development', // /p/ing
 		methods: ["Agile software development"],
-		technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "oAuth"] },
+		technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL', 'oAuth'] },
 
 	{	
-		task: "Application interface design",
-		toolset: ["Photoshop", "Instagram"],
+		task: 'Application interface design',
+		toolset: ['Photoshop', 'Instagram'],
 		results: ["Web interface", "Mobile app interface", "Social media design elements"] },
 
 	{	
-		task: "Customer research",
-		methods: ["User interviews", "Lean startup methodology"] },
+		task: 'Customer research',
+		methods: ['User interviews', "Lean startup methodology"] },
 
 	{	
-		activity: "Business development",
+		activity: 'Business development',
 		methods: ["Agile software development"],
-		results: ["Seminar paper", "Business model canvas"] }
+		results: ['Seminar paper', 'Business model canvas'] }
 	]
 },
 
@@ -295,11 +293,11 @@ profile: [
 
 	activity: [
 
-		"Web development", "Forum moderation",
+		'Web development', 'Forum moderation',
 
 	{
-		task: "Web development",
-	 	technologies: ["HTML", "CSS", "PHP", "MySQL"] }
+		task: 'Web development',
+	 	technologies: ['HTML', 'CSS', 'PHP', 'MySQL'] }
 	]
 }],
 
@@ -316,25 +314,25 @@ profile: [
 }],
 
 
-projects: [ 
+projects: [
 {
 	namespace: 'git-lafemme',
 	title: "Lafemme fashion finder",
 	caption: 
 	"Fashion community in app, where people help each other find the fashion items they love.",
 
-	sectors: ["fashion", "tech"],
+	sectors: ['fashion', 'tech'],
 	t: 2012,
 
 	waystones: {
 
 	1: [
-	"Finding love and clothes isn't all the same - though friends and couples can also fit one another.",
-	"To an outsider a relationship seems a mist, as is building an application for a fashion community. User feedback is weaver of strategic decisions that carve out the final product, code and design... All to leave glimpses of driving passions visible on the outside." ],
+	"Finding love and clothes isn't all the same - though friends and couples can also fit one another",
+	"To an outsider a relationship is a mist, and likewise building an application for a fashion community takes guesswork. User feedback is weaver of strategic decisions that carve out the final product, code and design... All to leave glimpses of driving passions visible on the outside." ],
 
 	2: {	
 	"User interviews":
-	"Devising customer research and performing user interviews with around 50 fashion enthusiasts, aiming to better understand local caregiving community and to deliver a product market fit." },
+	"Devising customer research and performing user interviews with around 50 fashion enthusiasts (somehow), aiming to better understand local caregiving community and to deliver a product market fit." },
 
 	3: {
 	"Agile software development":
@@ -348,7 +346,7 @@ projects: [
 {	
 	title: "Lepa gesta?",
 	description: [
-	"A contemporary collaboration was formed to produce understanding on ethical topics, developing ways to coexist and collaborate, guided by Zavod TiPovej! (tipovej.org, association for creative society). On several occasions and in different cities, a team of volunteers and menthors have invited active representatives of the youth to cocreate our ideas on a table desk, about life and Lepa gesta. Having created personas in groups, we had to observe with appreciation the leaps of change, stems of idealism, as valuably contained in an evolving, imperfect world.",
+	"A contemporary collaboration was formed to produce understanding on ethical topics, developing ways to coexist and collaborate, steered by Zavod TiPovej! (tipovej.org, association for creative society). On several occasions and in different cities, a team of volunteers and menthors have invited active representatives of the youth to cocreate our ideas on a table desk, about life and Lepa gesta. Having created personas in groups, we had to observe with appreciation the leaps of change, stems of idealism, as valuably contained in an evolving, imperfect world.",
 	"Our cooking group made a difference; hence the meal was vegan."],
 
 	timespan: "July 2014 - May 2015",
@@ -364,7 +362,7 @@ projects: [
 	},
 
 
-	{	
+	{
 		place: "Aktivator, MC Šentjur", city: "Šentjur, Slovenia", 
 		timespan: {
 			from: "February 28, 2015 10:00", to: "February 28, 2015 15:00"},
@@ -417,26 +415,27 @@ projects: [
 
 	"A communication tool (a website mockup) was very briefly designed to establish interest for a workshop format. In months to follow, a general web platform database schema and a read-only API was developed, whereas programming was stalled until further advances in rapid development (mastering JavaScript on web frontend); to enable a broad list of services, securely and transparently, with migrants taking on the role of service designers.":
 	[ 
-		"https://drive.google.com/open?id=1ln8z6rq3Ai2SXwH_CyIoUEoHJefEQEUm",
-		"https://github.com/fairshift/node-rhizome/tree/master/API%20(PHP)%20%5Bdiscontinued%2C%20reference-only%5D",
+		'https://drive.google.com/open?id=1ln8z6rq3Ai2SXwH_CyIoUEoHJefEQEUm',
+		'https://github.com/fairshift/node-rhizome/tree/master/API%20(PHP)%20%5Bdiscontinued%2C%20reference-only%5D',
 		...flags.offline ],
 
-	"Imaginarium of Goodwill Gesture ... A workshop was held to test reflections with visitors at Transforma festival, a day after a public panel on possibilities of alternative economies. A blank paper wireframe, that was to take meanings in group and invite stories from there on, instead took upon the modern, much needed principles. Interestingly, was it a sense of platform capitalism in an alternative space... Conversation enlivened just after the formalities closed with an invitation to stay and have a chat.": {
+	"Imaginarium of Goodwill Gesture ... \r\n\r\n A workshop was held to test and upgrade an on-site feature, namely reflections, with visitors at Transforma festival, following on the next day after a public panel on possibilities of alternative economies was held in a social centre (reflecting situations in Rog social centre, economics of creativity and philantrophy). \n\n A blank paper wireframe was unfolded to take in site concepts from predefined theme and the basic understanding of an online and in-person experience (with a group of non-resident festival vistors, strictly). This standpoint was to invite personal stories (less inflected by migrations and gentrification than a day before), reflections and interpretations of values, but as instead arose the modern, much needed societal principles (open knowledge, for one). \r\n Interestingly, was it a sense of platform capitalism in an alternative space... In that the conversation enlivened thereafter, as all formalities were closed with an invitation to stay and have a chat.": {
 
 		timespan: "August of 10th, 2016 at 18:00 - 19:00 GMT+1",
 		place: "Rog squat, Ljubljana",
 		outcomes: [
-			{ "Workshop prototype": "https://docs.google.com/document/d/1rmr3y3Ij9pr91PwWHwCPbFAArUlOauZxA6tjpiTwARI/view" }]
+			{ "Workshop prototype": "https://docs.google.com/document/d/1rmr3y3Ij9pr91PwWHwCPbFAArUlOauZxA6tjpiTwARI/view" }
+		]
 	},
 
 	2: {
 	"Social inter-media prototypes ... Stemming from previous work, integrations with local environment were researched and applicable outcomes published (with comments included), to online social media channels.": [ ...flags.offline ],
 
-	"Facebook cover photos": [...flags.offline,
+	"Facebook cover pictures": [...flags.offline,
 		"https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/15400501_140152156471228_5073762634429398947_n.jpg?oh=f73a791c0bad9136d5db1b86c5a1a129&oe=5AD973CD",
 		"https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/15400501_140152156471228_5073762634429398947_n.jpg?oh=f73a791c0bad9136d5db1b86c5a1a129&oe=5AD973CD",
 		"https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/15400501_140152156471228_5073762634429398947_n.jpg?oh=f73a791c0bad9136d5db1b86c5a1a129&oe=5AD973CD" ]
-	}]
+	}}
 },
 
 
@@ -451,7 +450,6 @@ projects: [
 	namespace: 'cofinder-eu',
 
 	title: "coFinder",
-	sector: 'startups',
 	description: "Helping assemble startup teams online and at networking events",
 	since: 2013,
 
@@ -475,16 +473,15 @@ projects: [
 		{ 
 			"Present your idea and assemble a team": 
 			"https://www.facebook.com/events/493797780731432/" },
-		{	
+		{
 			"Assemble your team - Internet of Things": 
 			"https://www.facebook.com/events/293345794154008/" }]
 		}
 	},
-	links: [
-		{ url: 'https://cofinder.eu', online: true }]
+	links: [{}]
 },
 
-{	
+{
 	type: ['gaming', 'community'],
 	namespace: 'thlive-net',
 
@@ -492,7 +489,7 @@ projects: [
 	caption: "Tony Hawk’s Pro Skater online gaming community",
 	sections: ["Get There challenges", "Videos", "Community Collaboration video", "Info & In-game techniques", "See Who’s Online"],
 
-	url: 'http://thlive.net',
+	url: 'thlive.net',
 	active: { from: 2004, to: 2009 },
 	online: false,
 
@@ -520,14 +517,14 @@ projects: [
 	[ "1000 visitors / day" ],
 
 	2:
-	"Website was shut down in 2009, which coincides with another skate video game by Electronic Arts.",
+	"Website was shut down in 2009, which coincides with release of another skateboarding video game (by Electronic Arts).",
 	
 	},
 
 	links: [
 		{ archive: 'https://web.archive.org/web/*/thlive.net' }]
-}
+}]
 
-] }};
+}}
 
 ```
