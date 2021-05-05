@@ -1,34 +1,16 @@
 <html>
-<body onLoad="load()"><!-- GoTo: <script #2> -->
+<body onLoad="load()"><!-- GoTo: <script #1> -->
 <defs>
 	<style type="text/css"><![CDATA[
-
 
     .socIcon g {
       fill:red;
     }
   
-  	
 	]]></style>
 </defs>
-<!--
 
-Candle stack illuminates a track
 
-Foretold mysteries to taste
-have embraced your codes down the load
-
-Vastness surrounds an open road,
-truth be told, it won't fold a note
-
-…
--->
-<script type="text/javascript"> var pckg = { 
-	"dependencies": {
-  	"gsap": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"
-	}
-}
-</script>
 <!--
 
 A teal fringe roof, in shade a car,
@@ -49,9 +31,35 @@ function load(){
 }
 
 </script>
+<!--
+
+Candle stack illuminates a track
+
+Foretold mysteries to taste
+have embraced your codes down the load
+
+Vastness surrounds an open road,
+truth be told, it won't fold a note
+
+…
+-->
 
 
-<div id="parallelogram" style="width: 100px; margin: 20px; padding: 20px;" font-face="Courier New" font-size="30px">hatches be very interesting and a lot of fun is superimposed, without the feeling of imprisonment. much appreciated lulz</div>
+
+<!--   … to employ Babel …  -->
+<script type="text/javascript">
+var pckg = {
+	"dependencies": {
+  		"gsap": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"
+	}
+}
+</script>
+<!--
+	onArchive: REMOVE E_ALL
+-->
+
+
+<div id="parallelogram" style="width: 100px; margin: 20px; padding: 20px;" font-face="Courier New" font-size="30px">Something is happening, somewhere, after all...</div>
 
 
 <div id="sandbox" style="position: absolute; float: right; top: 10px; right: 10px; opacity: 20%; padding: 30px; background-color: white;">
@@ -70,65 +78,37 @@ function load(){
 
 <!-- #1) Parser -->
 <script type="text/javascript">
-	
 
-	function loadParser(){
-		// Parsing functions to ignite on a given URL (only the content on-screen)
-		// … after scrolling stops and cursor doesn't move 
-	}
+	var loadParser = args => {return}; // Parsing functions to ignite on a given URL (after scrolling stops and cursor doesn't move)
 
 	function windowIsIdle(){
-
-		var t = setTimeout(windowIsIdle, 100);
-
-		window.pageYOffset!= undefined){
-	    return [pageXOffset, pageYOffset];
-	  }
-	  else{...
-		testContent('#testWrapper')
+		var t = setTimeout(windowIsIdle, 500);
+		return // [pageXOffset, pageYOffset];
 	}
 
-
-	//
-	// Global variables / Environment variables
-	// … embedded from Node.js/Babel in SVG storage executables
-	//  (validated locally, with central jstr.co, blockchain and peer-to-peer Holochain checksum mirrors -- these are the potential oprions)
-	//
-	var trie = {},
-		changesFeed = {
-			trie: {}
-		},
-		escapeCharMap = {
-			xml: [
-				/^\<.*\>$/gm,
-			]
-		}
-
-	function trieNesting( obj = {}, pathKey = "", escCharMap = escapeCharMap, trie = trie ){
+	function nestTrie( obj = {}, pathKey = "", escCharMap = {}, trie = {}){	return 
 	}
 
-
-	//
-	// Facebook content crawler implementation
-	//
 	function loadArticleTemplatePatterns() {
 
-		// Each site displays a number of content types to...
-		// recognize, validate and optionally, store and keep track of
-		//( versions thereof are possible )
+		/* 
+		   Each site displays a number of content types to
+		 … recognize, validate and optionally, store and keep track of
 
-		var templates = [];
-		return currentTemplates;
+		 ( tracking template and content versions is possible, also )
+
+		*/
+
+		return 
 	}
 
 
 
-	var sandboxDiv = {id: '#sandbox', border: [20, 'solid grey']}
+	//
+	// Facebook contents crawl ...
 
-
-
-	function parseFeed( currentTemplates ) {
-		// crawl
+	function parseFeed( currentTemplates ){
+		var sandboxDiv = {id: '#sandbox', border: [20, 'solid grey']}
 	}
 
 	function testContent(containerId){
@@ -154,24 +134,21 @@ function load(){
 		lineBreaks = walk(container, )
 	}
 
-	function lineBreak_test(str, sandbox){
-		
-		return index
-	}
-
 	function walk(el, runFns = [], sandboxEl = null){
 
 		var obj = {},
-
-
 		for(i = 0; containerId.innerHtml.length(); i++){
 			runFns.foreach(function(fnObj = currentValue){ // ['fn()', 'arg', 'args']
 
 			})
 		}
 
-		trieNesting(obj, )
+		nestTrie(obj, )
 	}
+
+
+	function test_linebreak(str, sandbox)
+		return index
 
 	function addUp(runFn, withArgs){
 		var sum = 0;
@@ -187,196 +164,99 @@ function load(){
 </script>
 
 
-<!-- #2) Database methods -->
+<!-- #2) Router: jstr.co DB -->
 <script type="text/javascript">
-// https://stackoverflow.com/questions/503093/how-do-i-redirect-to-another-webpage
-// https://github.com/jashkenas/backbone/issues/848
+	const serviceDomain = ["jstr.co", "www"];
 
-	var crossroad = (window.location.href).indexOf('#') + 1,
-			url = window.location.href
-			key = url.substr(url, crossroad),
-			onion = null,
+	var delimiters = { url: ["\/", "\?", "\&", "\="] },
+	  { url, key=null } = window.location.href.split( '#' ),
 
 	trie = onion = {
 		leapgest: {
 			'twitter-contract': 
-				'https://github.com/jsonion/leapgest/blob/master/screenshot-developer.twitter.com-2018-12-13-16-26-12.png'
+				'https://github.com/jsonion/leapgest/blob/master/screenshot-developer.twitter.com-2018-12-13-16-26-12.png' }},
+
+	peel = key.split( (let regex = new RegExp(delimiters['url'][0])) )
+	          .concat( url.split( regex ).reverse() )
+	    // or .splice()
+
+	/* Way to onion */
+	if( typeof onion !== 'undefined' ){
+		while(peel.length > 0){
+
+			if( peel[0] in onion && !(peel[0] in serviceDomain) ){
+				onion = onion[ peel[0] ] // Working path
+			} else
+				window.location.href = "https://www.facebook.com/santappl/posts/619369211882851"
 		}
-	},
 
-	delimiters = new RegExp(/\//),
-	peel = key.split(delimiters);
-
-	/* Onion way *\
-	while(peel.length > 0){
-
-		if( peel[0] in onion ){
-
-			onion = onion[ peel[0] ] // Working path
-		} else {
-			window.location.href = "https://www.facebook.com/santappl/posts/619369211882851"
-		}
-	}
-	\* Stop peeling */
-	if( onion !== 'undefined' ){
-	/*
-		switch ( onion ){
+	/*  switch ( onion ){
 			case onion.match(TypeUrl):
-				// ...
+
 			default:
-				//
+				
 		}
 	*/
-
-	window.location.href = onion
-}
+	}
 
 </script>
-<!--
-
--->
+<!--  -->
 
 
-<!-- #3) Database storage 3 -->
+<!-- #3) In-memory keystore -->
 <script type="text/javascript">
 
-</script>
-<!--
-	Remove onArchive: "index"
--->
+var 
+
+  /*
+*/ jsonion_db = {  // … into the cross-origins
+ //
+
+  _: {  /*   Operations RAM   */  },
+  i: { /* Index of key paths */ 0: {}, 1: {} },
+  ctx: {}, ctxProxy: {}, dbProxy: {},
+
+  hydrate(jsonion_db){
+    jsonion_db.forEach( (key, object) => {} )
+  },
+  escapeTrieKeys( __reserved ){
+    (typeof __reserved === 'object')
+   ? trie( __reserved )
+   : reservedNames.forEach( (val) => {} )
+  }
+// … Setter methods
+},
 
 
-<!-- Babel works here -->
-<script type="text/javascript">
 /*
 
-Dependencies are compiled and moved here
+ "… on …"[ion]  ·  [on]"… in …"([o])  ·  [on]"… io …"[n]
+ # jsOnIon, jsOnion, jsonIon, JSonIon, JSONIon, SONion
+ // /  //   //   //   //
 
-*/
+          /* 
+         / `\
+        ´    ``
+  Sort      
+ of                peeling
+ a                      loop …
+  
+ \           
+  `       .          /
+          #         ´
+
+ */
 </script>
 <!--
-	onArchive: Remove E_ALL
+	onArchive: REMOVE "i" (index)
 -->
 
 
-
-
+</body>
+</html>
 <!-- Daemon script
-
-
-## Scalar might
-
 
 Just to lean on a perfect step,
 near you
-
-Well it feels earned right now,
-just in time to get nowhere anew,
-I can hear you
-
-
-
-Artificial rhythm						<br />
-tangents surrender		 				\r\n
-
-Amidst a tender sway,
-lean on gestury in glimpses
-
-
-
-In subtle clubbers' ways, planned for days to come
-Some chairs in stall and in it that's all
-
-Teal camp bay, believing...
-Weaving ties that nodding mixes,
-hey
-
-You know that's not what it is,
-but feelings just wouldn't come alone
-
-
-
-Artificial rhythm hit					<br />
-surrender to the beat					\r\n
-
-In a subtle blender
-and there as habits stay
-
-
-
---- —————————————
-
-
-## A scheme only on habit  x  Weavers knot
-
-
-The night ties in a swinging knot,
-again
-
-Senses up, awareness rises,
-as...
-
-Don't ask me why, how, what,
-but...
-
-
-Clinging on loose ends,
-Have to face it -- it's too strange
-Once and for all, just forget it
-Out of my range, let me be
-
-
-A cloud in the right eyelid
-Super-poised to deliver
-Rants seem just the same
-
-
-Potental sparked,
-lips end joined up,
-somewhere, then,
-but it was daunting dark
-
-
-White rabbit jumps mines, too light to care
-while you're reminiscing other still rocks,
-wired up and all as time flocks rife
-
-
-
-Listen close
-on and on
-
-
-
-"
-
-Where's the thick lace from a hoodie's neck, back then when it was full...
-The single sock that has stayed on your side of events,
-A leftover thin leather belt strip
-
-"
-
-
-https://www.youtube.com/watch?v=mzoNqdNwUQA
-
-
--->
-</body>
-</html>
-<!-- .editorconfig
-
-root = true
-
-[*]
-indent_style = space
-indent_size = 2
-
-end_of_line = lf
-charset = utf-8
-trim_trailing_whitespace = true
-insert_final_newline = true
-
-[*.md]
-trim_trailing_whitespace = false
 
 -->
