@@ -2,9 +2,8 @@ Generating ...
 - Data models with a GraphQL responder, server-side
 - Frontend data state, with action reducer bindings (what is that, React/Redux?)
 
-```js manifest-gestrz.js
+```javascript gestrz.jsonion /*
 //
-//  //  //
 // /*
 
  # jsonion stem ( data collections × augmentations )
@@ -14,7 +13,7 @@ Generating ...
 [a x b] /\/
 
 
-import { onionStem } from './db-augment/'  // db.a
+import { onionStem } from 'jsonion/augment-db'  // db.a
 import { evaluateArgs, Abbr } from 'jsonion/util'
 
 import bindActionTpl from 'jsonion/actionPreset'
