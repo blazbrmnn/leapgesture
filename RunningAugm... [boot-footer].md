@@ -43,7 +43,7 @@ var Resolver = function( args = {}, dataRoot = onionStem ){
 ```
 
 
-```jsonion.tx2gql schema.txt
+```javascript schema.jsonion
 
 
       //    //    //    // Beware
@@ -76,6 +76,7 @@ export default const collections = () => {
 collection.need = {}
 
 
+
 /*
 
 ## Resorces
@@ -101,7 +102,6 @@ collections.resource = { // Link up above collections
   ...collection.resource_type
 
 }
-
 
 
 
@@ -139,7 +139,7 @@ collection.value = { // Tree structure of value keywords
 }
 
 collection.value_observable = { // Metrics for measuring a certain effort / impact, tied to values
-};                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+};
 
 
 collections.value_model_contract = {} /* Defined contracts
@@ -151,7 +151,6 @@ collections.value_model_contract = {} /* Defined contracts
     or open for editing anew
 
 */
-
 
 
 
@@ -171,7 +170,7 @@ collections.agency_resource = { // Pool of disclosed resources
 collections.agency_value = { // Values we care of (enacted and appreciated), narrowing in on preferred ways of doing
 }; 
                                       
- 
+
 
 /*
 
@@ -183,7 +182,8 @@ collections.agency_value = { // Values we care of (enacted and appreciated), nar
 collections.agency_gesture = {}
 collections.agency_gesture_resource = { // Typical / average flow of resources
 }
-collections.agency_gesture_transaction = { // Contains a set of transactions 
+collections.agency_gesture_transaction = { 
+  // Contains a set of transactions 
 };
 
 
@@ -207,6 +207,12 @@ collections.agency_transaction_need = {}
 // Reflected, enacted values (describing intangibles)
 collections.agency_transaction_value = {}
 
+```
+
+That was some first person deep learning (2016-2017, 2020)
+
+
+```tx2jsonion schema.txt
 
 # Resource
 jsonion { path } / Resource
@@ -218,15 +224,12 @@ jsonion { path } / Resource
  - matter
  - unfinished
 
-…/	Resource_Component
-	- resource_id
+…/ Resource_Component
+ - resource_id
  - referenced_resource_id
-
-
 
 ## Media resource
 jsonion { path } / Media
-
 
 
 ## Gesture
@@ -241,19 +244,18 @@ jsonion { path } / Gesture-s
 …/ { Stem }(Gesture)
 
   …/ From
-  	- gesture_id
-  	- entity_id 
-   ( submit | confirm | close, delete )
+  - gesture_id
+  - entity_id 
+  ( submit | confirm | close, delete )
 
-  …/	To
-   - gesture_id
-	  - entity_id
-   - confirmed
-  	- confirmed_time
+  …/ To
+  - gesture_id
+  - entity_id
+  - confirmed
+  - confirmed_time
 
   …/ Resource
-  	- resource_id
-
+  - resource_id
 
 
 ## Leap
@@ -269,7 +271,6 @@ jsonion { path } / Gesture-s
  - description
 
 
-
 ## Reflection
 { path } / Reflection-s
 
@@ -278,136 +279,34 @@ jsonion { path } / Gesture-s
  - time
 
 …/ Value
-	- reflection_id
+ - reflection_id
  - entity_id
  - value_id
  - color_hex
 
 …/ Context
-	- reflection_id
-	- value_id
-	- entity_id
-	- context_id
+ - reflection_id
+ - value_id
+ - entity_id
+ - context_id
 
 …/ Leap
-		- reflection_id
-		- entity_id
-		- value_id
-		- relative_value_id
-		- ratio
+ - reflection_id
+ - entity_id
+ - value_id
+ - relative_value_id
+ - ratio
 
 …/ Involved
-	- reflection_id
-	- entity_id
+ - reflection_id
+ - entity_id
  - confirmed
 
 …/ Trusted
  - reflection_id
  - entity_id
-	- trusted
+ - trusted
 
-```
-
-
-```js Facebook.jsonion
-{
-'.{propertyName} #': { // … looking for Facebook 'status_updates'
-	 This: "post",
-__allOf: [], // … is this the dataset we're looking for?
-__oneOf: [],
-	 map: ['timestamp', 'full_name', 'action', 'post', 'event_name', 'place_name'],
-
- '.title': {
-    Remove: true, // … task executed after jsIons react, while finally mapping to JSON tree
-
-		 // jsIons transform data state (where RegExp condition !false)
-	  '/(.*) shared an event./': { 
-	     As: ['full_name'],
-	    'post.action': 'event_shared'
- 	  },
- 	 '/(.*) was attending (.*) at (.*)./': {
-	     As: ['full_name', 'event_name', 'place_name'],
-	    'post.action': 'event_attending'
-	   }
-  }
-},
-/*
-
-Like dissoluted ions... The encoded parsing rules enter and react with substances kept in a medium's data structure; so to harness and map modified contents into a resulting JSON data tree.
-
-*/
-}
-
-```
-
-## 'V32SVGn' … instead of multiple HTML documents in another wrap
-
-One can't simply spur up a coherent archive (made of distinctive components), when bodies which consist of the same matter will smudge in a deep dish -- lasagna will remain a lasagna; and so would topics contained on embedded websites' pages submerge the wrapping HTML body... But surely we would want to smile in gratitude (that's right, to a forgotten chef who forced an all-around vegan rule to all of the courses).
-
-
-## Shorthand syntax of 'jsonion'
-
-A shorthand syntax to modify with a JSON dataset structure. A meaningful tool to learn with how to work around parsing processes.
-
-
-```js
-/*
-
-
-## Resolving unique paths among a variety of data types
-   ie. ".status_updates # => fbPosts"
-
-
- ` . ` List item identifier: precedes an encoded string (of defined types)
-
-
- ` # ` List item(s), identified by a designated index key
-
-   - Consequent list item number (index for efficiency)
-   - Contained key value -- easily matched
-   ( eg. hashtag, encoded timestamp, identifier key value, namespace key value )
-
-
- ` => ` Remap directive (clone data, or create an alias)
-
-   A mapping key (literal) could make available the type of items, nested in an array, in a schematized database collection.
-
-
- ` {{ L.function }}: {{ R.3 }} ` Key-value variable template (a special case)
-
-   - Right-hand variable contains a string, number, a function or an object (possibly an internal reference)
-   - Left key handle will accept any one of the above types; restrictions and/or transformations will apply in case of a returned object with an exceeding depth
-
-
-
-   "… on …"[ion]  ·  [on]"… in …"([o])  ·  [on]"… io …"[n]
-    # jsOnIon, jsOnion, jsonIon, JSonIon, JSONIon, SONion
-   // /  //   //   //   */
-
-             /* 
-            / `\
-           ´    ``
-     Sort      
-   of                peeling
-  a                      loop …
-     
-   \           
-    `         .          /
-              #         ´
-
-
-
-A teal fringe roof, in shade a car,
-all's black and ... receives a note
-
-Aloof from frowning winds,
-nothing's what it seems
-
-In a passage full of dreams,
-entire reef fleets open drinks
-
-
-  */
 ```
 
 I'm here to help you. Goodbye
