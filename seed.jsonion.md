@@ -11,4 +11,4 @@ export default var json = { ion: "{ databaseName }", db: {
   
 ```
 
-(You know you like implementing JavaScript procedures that deal with data trees, because you still don't have a native DOMParser that supports React in a native way, a native JS binding method for JSON (like CSS), or React for Markdown that's contained in a Textarea component, all using that C# syntax parser under the hood}
+(You know you like implementing JavaScript procedures that deal with data trees, because you still don't have a native DOMParser that supports templating (like React or xml:ns enable), neither a native JS binding method for JSON (like CSS), nor React for Markdown that's contained in a Textarea component, all using that C# syntax parser under the hood}
