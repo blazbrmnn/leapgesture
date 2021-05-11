@@ -17,4 +17,4 @@ export default var json = { ion: "{ databaseName }", db: {
   
 ```
 
-(You know you like implementing JavaScript procedures that deal with data trees and reinvent databases, because you still don't have a native DOMParser that supports templating (like React or xml:ns enable), nor a conventional method to declare a path to a JSON object to bind code and a data-state observer (by xpath, right). Atleast now there's also React for CommonMark, somehow using the C# parser, hovering over all the cascades under a browser's hood}
+(You know you like implementing JavaScript procedures that deal with data trees and reinvent databases, because you still don't have a native DOMParser that supports templating (like React or xml:ns enable), nor a conventional method to declare a path to a JSON object to bind code and a data-state observer (by xpath, right). Atleast now there's also React for CommonMark, hovering over the cascades under a browser's hood}
