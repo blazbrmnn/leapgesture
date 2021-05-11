@@ -1,7 +1,9 @@
 ## Initial seeding of database records, as usual
-... but with a slightly different design: a JSON object, encoded in conventional, minimalistic JavaScript (possibly readable to the naked eye).
+... but with a slightly different design: a JSON object with immutable properties, encoded in conventional, minimalistic JavaScript (possibly readable to the naked eye).
 
-"Jsonion/raw" implements an augmentation of a database controller in a minimialistic fashion; so to avoid any needless future transforms to format of data imported while seeding the database (for trivial reasons of updating or replacing database controllers in use). JavaScript ES2015 "import" statement is used in document head to declare dummy methods of conventional naming, to embed flags within data objects that a JSON object parser or a database controller should interpret.
+"Jsonion/raw" implements an abstraction of a database controller in the most static and minimialistic fashion; so to avoid any needless future transforms to format of data imported while seeding the database (for trivial reasons of updating or replacing database controllers in use). JavaScript ES2015 "import" statement is used in document head: only to declare dummy methods of conventional naming, so to embed flags within data objects that a JSON object parser or a database controller should interpret.
+
+Any formatting comes with a performance cost, though to denounce it as a trade-off would require complete automation (when you wouldn't ask about learning curves).
 
 
 ```javascript jsonion
