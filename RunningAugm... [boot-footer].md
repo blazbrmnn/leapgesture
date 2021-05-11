@@ -309,4 +309,92 @@ jsonion { path } / Gesture-s
 
 ```
 
+```javascript jsonion/fn.index.js#3,14%
+/*  //  //  //  //  //  //  //  //  //  //  
+
+                           augmentation
+                            collection
+ index   priority           purpose key
+ `````  ```````````     ```````````````````
+   i  {  0, 1, … n  {  {keyPath}__{sortedBy}
+
+
+//  //  { indexLoops, loop, trie }  //  */
+
+
+var indexQuery = {
+    sortedBy: {
+    '{timestamp.update}': 'DESC'
+    },
+    rangeParams: {
+      offset: 0, limit: 30,
+
+    '{timestamp.update}': {
+        a_: 0, b_: char(2^64)
+      }
+    },
+    returnType: {
+      data: true,
+      captions: true,
+      ref: true
+    },
+    config: {
+      expire: {
+        temp: +37,
+        persistent: 7*24*3600,
+      },
+      priority: { highest: 1, lowest: 4, 
+        deprioritizeUntil: 2, offloadAt: 3,
+        locked: 0
+      },
+     //
+      maxRangeLen: 5000,
+      minIndexLen: 100
+    }
+}
+
+
+var indexParams = {
+  lastInsert: ['{t}', '{i}'],
+  trie: {
+ /* Optimized fast-access index
+  … a derivate of query patterns (of frequent and relevant steps in loop) */
+  },
+ '{sortedBy__triePath}': {  // … inMemory cache (once)
+    count: '{n}',
+    store: {
+      rootData: false, captions: false, refs: true
+    },
+
+    ranges: [
+      [ '{a_}', '{b_}', '{a__utf8}', '{z__utf8}' ]
+    ],
+    rangeBySource: {
+      0: [ '{a_}', '{b_}', '{a__utf8}', '{b__utf8}', '{i}', '{n}', '{indexObj__next}', '{indexObj__prev}' ],
+    },
+
+    stepPolynomial: [ // … keyword density (traversed)
+      { 
+       '{routeMatch}': [ '{avgMatchRatio}', '{a__utf8}', '{b__utf8}', '{i}', '{n}', '{lastQueryAt}', '{queryFrequency}' 
+        ],
+      },
+    ],
+    lastQueryAt: '{timestamp}',
+    expire: -1
+  },
+/*
+  { … },
+        */
+
+  methodsWikipedia: { 
+  '{functionPath}': '{Wikipedia__URL}' 
+  },
+
+  insertedKeys: [ // … unprocessed inserted rows
+    { t: null, i: null, key: null },
+  ]
+}
+
+```
+
 I'm here to help you. Goodbye
