@@ -1,3 +1,7 @@
+Generating ...
+- Data models with a GraphQL responder, server-side
+- Frontend data state, with action reducer bindings (what is that, React/Redux?)
+
 ```js manifest-gestrz.js
 //
 //  //  //
