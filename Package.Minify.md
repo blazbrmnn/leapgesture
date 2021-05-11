@@ -14,80 +14,6 @@ Upon compiling, the contents of this file are rendered to a compact form and thu
 //  //  { indexLoops, loop, trie }  //  */
 
 
-var indexCfg = {
-    sortedBy: {
-    '{timestamp.update}': 'DESC'
-    },
-    rangeParams: {
-      offset: 0, limit: 30,
-
-    '{timestamp.update}': {
-        a_: 0, b_: char(2^64)
-      }
-    },
-    returnType: {
-      data: true,
-      captions: true,
-      ref: true
-    },
-    config: {
-      expire: {
-        temp: +37,
-        persistent: 7*24*3600,
-      },
-      priority: { highest: 1, lowest: 4, 
-        deprioritizeUntil: 2, offloadAt: 3,
-        locked: 0
-      },
-     //
-      maxRangeLen: 5000,
-      minIndexLen: 100
-    }
-}
-
-
-var __indexParams = {
-  lastInsert: ['{t}', '{i}'],
-  trie: {
- /* Optimized fast-access index
-  … a derivate of query patterns (of frequent and relevant steps in loop) */
-  },
- '{sortedBy__triePath}': {  // … inMemory cache (once)
-    count: '{n}',
-    store: {
-      rootData: false, captions: false, refs: true
-    },
-
-    ranges: [
-      [ '{a_}', '{b_}', '{a__utf8}', '{z__utf8}' ]
-    ],
-    rangeBySource: {
-      0: [ '{a_}', '{b_}', '{a__utf8}', '{b__utf8}', '{i}', '{n}', '{indexObj__next}', '{indexObj__prev}' ],
-    },
-
-    stepPolynomial: [ // … keyword density (traversed)
-      { 
-       '{routeMatch}': [ '{avgMatchRatio}', '{a__utf8}', '{b__utf8}', '{i}', '{n}', '{lastQueryAt}', '{queryFrequency}' 
-        ],
-      },
-    ],
-    lastQueryAt: '{timestamp}',
-    expire: -1
-  },
-/*
-  { … },
-        */
-
-  methodsWikipedia: { 
-  '{functionPath}': '{Wikipedia__URL}' 
-  },
-
-  insertedKeys: [ // … unprocessed inserted rows
-    { t: null, i: null, key: null },
-  ]
-},
-
-
 indexLoops = function( jsonionPath,
         
       sortedBy = indexCfg.sortedBy,
@@ -117,7 +43,7 @@ indexLoops = function( jsonionPath,
  */ var indexObj = next[0], i = next[1], order = next[2], limit = next[4], priority = next[-1], offset = next[-2],
 
         sortingKeys = ( next.length > 6 )
-                       ?
+                       ? [] : [] // ...
 
   } else {
 
@@ -127,30 +53,30 @@ indexLoops = function( jsonionPath,
                     ? args.sortedBy.split(",") : null,
        indexKeys = ( typeof args.sortedBy === 'number' ) 
                          ? args.sortedBy + 2 : 2
-  
 
   if( keyIndex ){
     if( typeof args.sortedBy === 'array' ){
 
       sortingKeys = args.sortedBy
-      var so
+      // ...
 
     } else
     if( typeof sortingKeys ){
   
-    
+      // ...
   
     } else
     if( typeof ){
 
-
+      // ...
+      
     } else {
     
-
+      // ...
     }
   }
 
-    
+  
   while( condition == true ){
     var index = jsonion_db.i[nPriority][ onionPath.0 ]
 
@@ -185,8 +111,6 @@ indexLoops = function( jsonionPath,
 
 
 
-
-
 registerIndex = function( onionPath, sortedBy ){
   var returnType = {
     data: false,
@@ -196,18 +120,12 @@ registerIndex = function( onionPath, sortedBy ){
   cfg = indexConfig
 },
 
-
-updateIndexParams = function( ){
-
-},
-
+updateIndexParams = function(){},
 
 indexData = function(
   onionPath, rangeParams = {}, dataNodes = [], indexObj = null
 ){
   
-  
-
   if( dataNodes.isArray() && dataNodes.length ){
     dataNodes.forEach( (node) => {
       var results = inOnion( onionPath, rangeParams )
@@ -217,20 +135,14 @@ indexData = function(
   return [ok, indexObj]
 },
 
+sortIndexBy = (keyPath, sortAttr = []) {},
 
-sortIndexBy = (keyPath, sortAttr = []) {
-
-},
-
-
-unsetIndex = function( keyPath, sortKeys = null ){
-
-},
+unsetIndex = function( keyPath, sortKeys = null ){},
 
 ```
 
 
-```js fn.helpers.js
+```javascript jsonion/tx2json.js
 
    //
 // Helpers in functions
@@ -259,16 +171,15 @@ var loop = (needle, refObj, predicate, pointer = -1, limit = null) => {
 /*
 
  ##
-   Learning examples 
+   Learning examples needed 
  ( jstr.co )
-
 
  {hashtag}-{entityId}
 
  [linkTitle](resolvingUrl)
 
  */
-
+ 
 
 trie = function( trie, stringList = {}, 
   delimiterList:{},
@@ -343,11 +254,6 @@ trie = function( trie, stringList = {},
 },
 
 
-hashIdQuake = function( ){
- // … abbreviated namespace keys in conjunction with hashId suffix
-}
-
-
 parseSchemaObj = function( object, inputs=null, nested=0 ){
 
   var objectType = (object.isArray()) ? 'array' : typeof object,
@@ -419,8 +325,6 @@ parseSchemaObj = function( object, inputs=null, nested=0 ){
 
     return { '__preprocessed': resultObj }
 
-
-
   } else {
     return d_b({err: 'type_mismatch'}, object)
   }
@@ -433,11 +337,16 @@ abbreviate = function( array, abbrTrie = {}, abbr = {} ){
      abbr[( getLeafPath( str, abbrTrie ))] = str
    }
  },
+ 
+ 
+hashIdQuake = function( ){
+ // … abbreviated namespace keys in conjunction with hashId suffix
+}
 
 ```
 
 
-```js augmentation.preprocess.js
+```javascript jsonion/augmentation.preprocess.js
 //
 
 d_b.augment.renderProps = {
