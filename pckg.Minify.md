@@ -1,5 +1,55 @@
-Upon compiling, the contents of this file are rendered to a compact form and thus become unreadable... Code, which is assigned to namespaces already declared in this package, is removed; any comments in code are removed, also.
+*Upon compiling, the contents of this file are rendered to a compact form and thus become unreadable (without a source map) ... Code, which is assigned to namespaces already declared in this package, is removed; any comments in code are removed, also.*
 
+
+## Shorthand syntax of 'jsonion'
+
+Devising a shorthand syntax to modify with a JSON dataset structure. Maybe a meaningful tool to learn with (how to work around parsing processes).
+
+```js
+/*
+
+
+## Resolving unique paths among a variety of data types
+   ie. ".status_updates # => fbPosts"
+
+
+ ` . ` List item identifier: precedes an encoded string (of defined types)
+
+
+ ` # ` List item(s), identified by a designated index key
+
+   - Consequent list item number (index for efficiency)
+   - Contained key value -- easily matched
+   ( eg. hashtag, encoded timestamp, identifier key value, namespace key value )
+
+
+ ` => ` Remap directive (clone data, or create an alias)
+
+   A mapping key (literal) could make available the type of items, nested in an array, in a schematized database collection.
+
+
+ ` {{ L.function }}: {{ R.3 }} ` Key-value variable template (a special case)
+
+   - Right-hand variable contains a string, number, a function or an object (possibly an internal reference)
+   - Left key handle will accept any one of the above types; restrictions and/or transformations will apply in case of a returned object with an exceeding depth
+
+
+
+   "… on …"[ion]  ·  [on]"… in …"([o])  ·  [on]"… io …"[n]
+    # jsOnIon, jsOnion, jsonIon, JSonIon, JSONIon, SONion
+   // /  //   //   //   */
+
+             /* 
+            / `\
+           ´    ``
+     Sort      
+   of                peeling
+  a                      loop …
+     
+   \           
+    `         .          /
+              #         ´
+```
 
 ```js fn.index.js
 /*  //  //  //  //  //  //  //  //  //  //  
@@ -345,6 +395,36 @@ hashIdQuake = function( ){
 
 ```
 
+```js Facebook.jsonion
+{
+'.{propertyName} #': { // … looking for Facebook 'status_updates'
+   This: "post",
+__allOf: [], // … is this the dataset we're looking for?
+__oneOf: [],
+   map: ['timestamp', 'full_name', 'action', 'post', 'event_name', 'place_name'],
+
+ '.title': {
+    Remove: true, // … task executed after jsIons react, while finally mapping to JSON tree
+
+     // jsIons transform data state (where RegExp condition !false)
+    '/(.*) shared an event./': { 
+       As: ['full_name'],
+      'post.action': 'event_shared'
+    },
+   '/(.*) was attending (.*) at (.*)./': {
+       As: ['full_name', 'event_name', 'place_name'],
+      'post.action': 'event_attending'
+     }
+  }
+},
+/*
+
+Like dissoluted ions... The encoded parsing rules enter and react with substances kept in a medium's data structure; so to harness and map modified contents into a resulting JSON data tree.
+
+*/
+}
+
+```
 
 ```javascript jsonion/augmentation.preprocess.js
 //
