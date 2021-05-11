@@ -6,7 +6,7 @@
 
 ```javascript jsonion
 
-import *, {} from "jsonion/raw"
+import *, { flags AS flag } from "jsonion/raw"
 
 export default var json = { ion: "{ databaseName }", db: {
 
