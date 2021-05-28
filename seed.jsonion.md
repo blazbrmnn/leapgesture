@@ -17,7 +17,12 @@ export default var json = { ion: "{ databaseName }", db: {
 
 
 
-  
+
+
+
+
+
+
 ```
 
-(You know you like implementing JavaScript procedures that deal with data trees and reinvent database talk, because you still don't have a native DOMParser that supports templating (like React or xml:ns enable), nor two conventional methods to declare paths to a JSON object and to bind a data state observer ... Aleast there's also React for CommonMark; hovering along, over the cascades, under a browser's hood}
+One would assume that data streams and as such, data objects, are processed twice at minimum (at time of loading online resources and secondly, while applying JS code).
