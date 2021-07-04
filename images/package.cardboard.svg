@@ -20,6 +20,26 @@
    enable-background="new">
   <defs
      id="defs5432">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient6320">
+      <stop
+         style="stop-color:#cb6a6a;stop-opacity:1;"
+         offset="0"
+         id="stop6322" />
+      <stop
+         id="stop6330"
+         offset="0.39008969"
+         style="stop-color:#ffffff;stop-opacity:0.60784316" />
+      <stop
+         id="stop6328"
+         offset="0.61015034"
+         style="stop-color:#e6e6e6;stop-opacity:0.51372552" />
+      <stop
+         style="stop-color:#2388b5;stop-opacity:0"
+         offset="1"
+         id="stop6324" />
+    </linearGradient>
     <pattern
        inkscape:stockid="Sand (bitmap)"
        id="pattern5623"
@@ -172,6 +192,15 @@
          height="260"
          width="260" />
     </pattern>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6320"
+       id="linearGradient6326"
+       x1="435.57779"
+       y1="-0.0010778927"
+       x2="435.57779"
+       y2="250.63135"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -180,9 +209,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.25"
-     inkscape:cx="-728.47757"
-     inkscape:cy="-183.10135"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="436.96922"
+     inkscape:cy="-26.336066"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -233,6 +262,10 @@
        position="911.0469,149.32813"
        orientation="1,0"
        id="guide5652" />
+    <sodipodi:guide
+       position="768.27154,116.14229"
+       orientation="0,1"
+       id="guide5663" />
   </sodipodi:namedview>
   <metadata
      id="metadata5435">
@@ -251,20 +284,13 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-3.4645669e-6)"
-     style="filter:url(#filter4872);opacity:1">
+     style="display:inline;opacity:1;filter:url(#filter4872)">
     <rect
-       style="opacity:0.362;fill:url(#pattern7597);fill-opacity:1;stroke:#d2c2c2;stroke-width:0.30294651;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4.9000001;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:0.36199999;fill:url(#pattern7597);fill-opacity:1;stroke:#d2c2c2;stroke-width:0.30294651;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4.9000001;stroke-dasharray:none;stroke-opacity:1"
        id="rect6002"
        width="33.488918"
        height="150.00471"
        x="0.15147325"
-       y="902.20599" />
-    <rect
-       style="display:inline;opacity:0.362;fill:#ec7474;fill-opacity:0.58659219;stroke:none;stroke-width:0.30294651;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4.9000001;stroke-dasharray:none;stroke-opacity:1"
-       id="rect6002-6"
-       width="33.488918"
-       height="150.00471"
-       x="0.40147498"
        y="902.20599" />
     <rect
        style="display:inline;opacity:0.36199999;fill:url(#Checkerboard);fill-opacity:1;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
@@ -274,13 +300,6 @@
        x="0"
        y="-0.0010778927" />
     <rect
-       style="opacity:0.36199999;fill:#ec7474;fill-opacity:0.58659219;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
-       id="rect5672"
-       width="183.84776"
-       height="252.36328"
-       x="0.7746039"
-       y="2.0283637" />
-    <rect
        style="opacity:0.36199999;fill:url(#Checkerboard);fill-opacity:1;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
        id="rect5841"
        width="727.33667"
@@ -288,26 +307,31 @@
        x="760.84686"
        y="-0.0010744282" />
     <rect
-       style="opacity:0.36199999;fill:#ec7474;fill-opacity:0.58823532;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
-       id="rect5843"
-       width="727.33667"
-       height="252.36328"
-       x="760.84686"
-       y="-0.0010744282" />
-    <rect
-       style="opacity:0.36199999;fill:url(#Checkerboard);fill-opacity:1.0;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
+       style="opacity:0.36199999;fill:url(#Checkerboard);fill-opacity:1;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
        id="rect5658"
        width="150.19998"
        height="150.00766"
        x="760.84686"
        y="902.35455" />
+    <path
+       style="opacity:0.36199999;fill:url(#Checkerboard);fill-opacity:1;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
+       d="m 760.84691,936.21991 0,116.14229 -576.99915,0 c 1e-5,0 385.71531,-77.18141 576.99915,-116.14229 z"
+       id="rect5669"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="opacity:0.36199999;fill:url(#Checkerboard);fill-opacity:1;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
+       d="m 1488.1835,936.21991 0,116.14229 -577.13663,0 c 0,0 577.13673,-116.14228 577.13663,-116.14229 z"
+       id="rect5700"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
     <rect
-       style="opacity:0.36199999;fill:#cb6a6a;fill-opacity:0.65490196;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
-       id="rect5661"
-       width="150.19998"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6953"
+       width="576.99915"
        height="150.00766"
-       x="760.84686"
-       y="902.35455" />
+       x="183.84776"
+       y="1102.3546" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -349,31 +373,32 @@
   <g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="[glue] sand">
+     inkscape:label="[glue] sand"
+     style="display:inline">
     <rect
-       style="opacity:0.36199999;fill:url(#sand_bitmap);fill-opacity:1.0;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
+       style="opacity:0.36199999;fill:url(#sand_bitmap);fill-opacity:1;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
        id="rect5675"
        width="33.840111"
        height="649.99231"
        x="0"
        y="252.36221" />
     <rect
-       style="opacity:0.36199999;fill:url(#sand_bitmap);fill-opacity:1.0;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
+       style="opacity:0.36199999;fill:url(#sand_bitmap);fill-opacity:1;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
        id="rect5852"
        width="150.00766"
        height="150.00766"
        x="33.840111"
        y="902.35455" />
     <path
-       transform="translate(0,-3.4645669e-6)"
-       style="filter:url(#filter4872);opacity:0.36199999;fill:url(#sand_bitmap);fill-opacity:1;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
+       transform="matrix(1,0,0,-1,0,1954.7168)"
+       style="opacity:0.36199999;fill:url(#sand_bitmap);fill-opacity:1;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118;filter:url(#filter4872)"
        d="m 183.84776,902.35455 576.99915,116.00005 0,34.0076 -576.99915,0 z"
        id="rect4188"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <path
-       transform="translate(0,-3.4645669e-6)"
-       style="filter:url(#filter4872);opacity:0.36199999;fill:url(#pattern5638);fill-opacity:1;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
+       transform="matrix(1,0,0,-1,0,1954.9288)"
+       style="opacity:0.36199999;fill:url(#pattern5638);fill-opacity:1;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118;filter:url(#filter4872)"
        d="m 910.98576,902.46053 576.99904,116.00017 0,34.0076 -576.99904,0 z"
        id="rect4188-0"
        inkscape:connector-curvature="0"
@@ -382,7 +407,8 @@
   <g
      inkscape:groupmode="layer"
      id="layer4"
-     inkscape:label="[side-l] cheese yasai">
+     inkscape:label="[side-l] cheese yasai"
+     style="display:inline">
     <rect
        style="opacity:0.36199999;fill:url(#linearGradient5820);fill-opacity:0.58659219;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
        id="rect5744"
@@ -395,7 +421,7 @@
      inkscape:groupmode="layer"
      id="layer5"
      inkscape:label="[side-r] halcyon satellite"
-     style="opacity:1">
+     style="display:inline;opacity:1">
     <rect
        style="opacity:0.36199999;fill:url(#linearGradient5828);fill-opacity:0.58659219;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
        id="rect5744-4"
@@ -407,15 +433,29 @@
   <g
      inkscape:groupmode="layer"
      id="layer7"
-     inkscape:label="[bottom-slice] ingredients" />
+     inkscape:label="[bottom-slice] ingredients"
+     style="display:inline">
+    <rect
+       style="opacity:0.36199999;fill:#2388b5;fill-opacity:0;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
+       id="rect6332"
+       width="576.99915"
+       height="150.00766"
+       x="183.84776"
+       y="902.35455" />
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer6"
-     inkscape:label="[top] word tunnel vision" />
+     inkscape:label="[top] word tunnel vision">
+    <path
+       style="opacity:0.36199999;fill:url(#linearGradient6326);fill-opacity:1;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
+       d="m 183.84776,-0.00107789 576.99915,0 0,252.36327789 -576.99915,0 z"
+       id="rect6317" />
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer8"
-     inkscape:label="[behind] onion paths (gfx: oliveness)">
+     inkscape:label="[behind] onion paths (gfx: oliveness++)">
     <rect
        style="opacity:0.36199999;fill:#ec7474;fill-opacity:0.58659219;stroke:none;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.55294118"
        id="rect5744-4-8-0"
