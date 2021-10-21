@@ -1222,8 +1222,7 @@ const exprWrap = function(
                       ...arguments)
       }
     } else {
-      type.runValidated = null
-      return err = validated
+      return {err: validated}
     }
   };
 
