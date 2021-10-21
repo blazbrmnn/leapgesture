@@ -1176,22 +1176,23 @@ const fieldDiffArray = { // List of modifications
 
 */
 
-jsonion.exprWrap = function( 
+const exprWrap = function( 
   exprFn,
   exprName,
   config = null,
-  
-  invokingTrie = {},
-  
-  runtimeArgs = null,
+    
   subtypeArgs = null,
-  validatorFn = null
+  validatorFn = null,
+  
+  invokingTrie = {}
 ){
 
   var validated = false, err,
 
-  type = () => {
-    return exprFn( ...this.arguments )
+   //
+  // Direct function call
+  type = function() {
+    return exprFn( arguments )
   };
 
   type.name = exprName;
@@ -1209,19 +1210,18 @@ jsonion.exprWrap = function(
   // Wrap up …
   //
 
-  type.runValidated = () => {
+  if (typeof validatorFn == 'function') {
 
-    if(typeof validatorFn !== 'function')
-      return exprFn( ...this.arguments )
-
-    validated = validatorFn(config
-                            runtimeArgs,
+    validated = validatorFn(config,
                             subtypeArgs);
-    if(validated == true)
-      return exprFn( ...this.arguments )
-    else
+                            
+    if (validated == true) {
+      type.runValidated = function() {
+        return exprFn(config, subtypeArgs, ...arguments)
+      }
+      
+    } else
       return err = validated
-  
   };
 
 
@@ -1232,7 +1232,7 @@ jsonion.exprWrap = function(
 //   Invoking a variety of typed functions by arguments
 // … initiating and accessing subtypes of one expression
 //
-//   i.e. expressionType(), expressionType["subtype"]()
+//   i.e. expressionType(), expressionType["subtype"].runValidated()
 //
 
 ```
