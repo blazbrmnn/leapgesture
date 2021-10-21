@@ -1200,7 +1200,7 @@ const exprWrap = function(
      ( invokingTrie.length )
      ? invokingTrie : null;
 
-  type.runValidated = () => {};
+  type.runValidated = null;
 
   type.config = (config) 
  ? config : null;
@@ -1217,11 +1217,14 @@ const exprWrap = function(
                             
     if (validated == true) {
       type.runValidated = function() {
-        return exprFn(config, subtypeArgs, ...arguments)
+        return exprFn(config,
+                      subtypeArgs, 
+                      ...arguments)
       }
-      
-    } else
+    } else {
+      type.runValidated = null
       return err = validated
+    }
   };
 
 
