@@ -1166,3 +1166,73 @@ const fieldDiffArray = { // List of modifications
 };
 
 ```
+
+
+```js fn.expressions.js
+
+/*
+
+ # A function wrapper that validates "arguments" and resolves "subtypes"
+
+*/
+
+jsonion.exprWrap = function( 
+  exprFn,
+  exprName,
+  config = null,
+  
+  invokingTrie = {},
+  
+  runtimeArgs = null,
+  subtypeArgs = null,
+  validatorFn = null
+){
+
+  var validated = false, err,
+
+  type = () => {
+    return exprFn( ...this.arguments )
+  };
+
+  type.name = exprName;
+  type.invoke = 
+     ( invokingTrie.length )
+     ? invokingTrie : null;
+
+  type.runValidated = () => {};
+
+  type.config = (config) 
+ ? config : null;
+
+
+  //
+  // Wrap up …
+  //
+
+  type.runValidated = () => {
+
+    if(typeof validatorFn !== 'function')
+      return exprFn( ...this.arguments )
+
+    validated = validatorFn(config
+                            runtimeArgs,
+                            subtypeArgs);
+    if(validated == true)
+      return exprFn( ...this.arguments )
+    else
+      return err = validated
+  
+  };
+
+
+  return type;
+}
+
+//
+//   Invoking a variety of typed functions by arguments
+// … initiating and accessing subtypes of one expression
+//
+//   i.e. expressionType(), expressionType["subtype"]()
+//
+
+```
