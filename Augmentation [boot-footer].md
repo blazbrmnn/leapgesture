@@ -46,114 +46,154 @@ var Resolver = function( args = {}, dataRoot = onionStem ){
 ```
 
 
-```javascript schema.jsonion
+```javascript
 
+function collections (jsonion_db) {
 
-      //    //    //    // Beware
+  var db = () => {
+    var relations = {}
 
-     //   _.* => 1|.*  // Mashup
+     //
+    // A resource may be ascribed to multiple types and may be expressed in certain units
 
-    //   __  => _     // Partials
+    relations.resource = [
+      "resource_type",
+      "resource_unit"
+    ]
 
-   //    //    //    // Consideration
+    return relations
+  };
 
+  // Search for definitions in folder
+  db.schemaRoot = "./link-to/schema/"
 
-export default const collections = () => {
-   var collection = {}
-
-//
-// ////    //*
- # Gesture-Reflection module definitions
-//     /// with jsonion × ( node-rhizome )
-*/
-
-
-/*
-
-## Needs
- - Tree structure of definitions, rooted in basic needs 
- ( in overlapping with "wishes", "urges", "desires", "demands" )
-
-   */
-
-collection.need = {}
+  // Additional data node contexts
+  var { tree, rhizome, circles } = 
+        jsonion_db.augmentations;
 
 
 
 /*
 
-## Resorces
- - Tree structure of resource definitions
+  # Needs
+  - Tree structure of definitions, rooted in basic needs 
+  ( overlapping with "wishes", "urges", "desires", "demands" )
 
-   */
+    */
 
-collection.resource = {}
-collection.resource_type = {}
-collection.resource_unit = {}
-
-
-collections.resource = { // Link up above collections
-  'schema': {
-    resource_type: ['./link-to/schema.json#internalRef', Rec.rel],
-    resource_unit: ['./link-to/simplSchema.js#exportedVar', Rec.rel]
-  },
-
-  ...collection.resource, // <- repeat main resource
-
-// # Add related data structures:
-  ...collection.resource_unit,
-  ...collection.resource_type
-
-}
+  db.need = [ rhizome ]
 
 
 
 /*
 
-## Gestures
- - Symbols of patterns, emerging from recurring (inter)actions and behaviours
+  # Resorces
+  - Tree structure of resource definitions
 
-   */
+    */
 
-collection.gesture = { // Templates, personalized to a specific occasion
-}
+  db.resource = []
+  db.resource_type = [ tree ]
+  db.resource_unit = [ tree ]
+
+
+/*
+
+  # Gestures
+  - Symbolic patterns of recurring behaviors and interactions
+  - Templates, personalized to a specific occasion
+
+    */
+
+  db.gesture = [ rhizome ]
 
 
 
 /*
 
-## Leaps
- - A gesture becomes a leap when habits change
+  # Leaps
+  - They changed something
  
-   Q: When does a 'leap' fit in node_stem, as a 'milestone' or a 'pointer' in content evolution flow?
-
-   */
+    */
 
 
 
 /*
 
- # Collection: Values
- - Words which are meaningful upon truthfully reflecting shared, interpersonal experiences
+  # Collection: Values
+  - Words which are meaningful upon truthfully reflecting shared, interpersonal experiences
 
-   */
+    */
 
-collection.value = { // Tree structure of value keywords
+   //
+  // Tree structure of value keywords
+
+  db.value = []
+
+
+   //
+  // Metrics for measuring a certain effort / impact, tied to values
+
+  db.value_observable = []
+
+
+  db.value_model_contract = [] /*
+  
+  # Defined contracts
+
+  - when a condition is met, words used by a given person / entity get opened for editing or are substituted as predefined
+
+  */
+
+
+
+  return db
 }
 
-collection.value_observable = { // Metrics for measuring a certain effort / impact, tied to values
-};
+```
 
+```javascript
 
-collections.value_model_contract = {} /* Defined contracts
-  
-  # For example:
+export function agencyCollections (jsonion_db) {
 
-  - when a condition is met, words used by a given person / entity are ...
-    replaced with a predefined correction
-    or open for editing anew
+  var db = () => {
+    var relations = {}
 
-*/
+    relations.agency_needs = [
+      "need"
+    ]
+
+    relations.agency_resources = [
+      "resource"
+    ]
+
+    relations.agency_values = [
+      "value"
+    ]
+
+    relations.agency_gestures = [
+      "gesture",
+      "agency_gesture_resources",
+      "agency_gesture_transactions"
+    ]
+
+    relations.agency_gesture_transactions = [
+      "agency_transactions"
+    ]
+
+    relations.agency_gesture_resources = [
+      "agency_resources"
+    ]
+
+    return relations
+  };
+
+  // Search for definitions in folder
+  db.schemaRoot = "./link-to/schema/"
+
+  // Additional data node contexts
+  var { tree, rhizome, circles } = 
+        jsonion_db.augmentations;
 
 
 
@@ -161,61 +201,84 @@ collections.value_model_contract = {} /* Defined contracts
 
   # Collections: What we need, what we can offer, what we value (appreciate)
 
-*/
+    */
 
-collections.agency_need = { 
-// List of needs (all-time ; recurring higher)
-// ... described in text or with tags (referenced by ID)
-}
-collections.agency_resource = { // Pool of disclosed resources
-// Governed by entities (a group of people & circles) with defined agency
-}; 
-collections.agency_value = { // Values we care of (enacted and appreciated), narrowing in on preferred ways of doing
-}; 
-                                      
+   // List of needs (recurring, all-time)
+  // ... described in text or with tags
+
+  db.agency_needs = [ circles ]
+
+
+   // Pool of available, disclosed resources
+  // ... governed by a group of people with defined agency
+
+  db.agency_resources = [ circles ]
+
+
+   // Values we care of (enacted and appreciated)
+  // ... narrowing in on preferred ways of 
+
+  db.agency_values = [ circles ] 
+
 
 
 /*
 
-  # Collection: Gestures
-  - Desired scenarios - descriptions of recurring patterns (activities and flowing resources)
+  # Gestures
+  - Desired scenarios as descriptions of recurring patterns (of activities and resource flows)
 
-*/
+    */
 
-collections.agency_gesture = {}
-collections.agency_gesture_resource = { // Typical / average flow of resources
-}
-collections.agency_gesture_transaction = { 
-  // Contains a set of transactions 
-};
+  db.agency_gestures = []
+
+
+   //
+  // Typical use of resources
+
+  db.agency_gesture_transactions = []
+  db.agency_gesture_resources = []
 
 
 
 /*
 
   # Collection: Transactions
-  - Occurence of a gesture or its variant - a transaction
-  - Flow of ... among giving and receiving entities (meta data about an act of sharing)
+  - Occurence of variant of a gesture
+  - Flow among giving and receiving entities
+  - Meta data about an act of sharing
 
-*/
+    */
 
-collections.agency_transaction = {}
+  db.agency_transactions = []
 
-// Resources and energies, which flowed while sharing
-collections.agency_transaction_resource = {}
 
-// Needs, fulfilled with this gesture
-collections.agency_transaction_need = {}
+   //
+  // Resource and energy flow
 
-// Reflected, enacted values (describing intangibles)
-collections.agency_transaction_value = {}
+  db.agency_transaction_resources = []
+
+
+   //
+  // Needs, fulfilled
+
+  db.agency_transaction_need = []
+
+
+   //
+  // Values, enacted and reflected
+
+  db.agency_transaction_value = []
+
+
+
+  return db
+}
 
 ```
 
 That was some first person deep learning (2016-2017, 2020)
 
-
-```tx2jsonion schema.txt
+```jsonion schema.txt
 
 # Resource
 jsonion { path } / Resource
