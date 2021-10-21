@@ -1192,7 +1192,7 @@ const exprWrap = function(
    //
   // Direct function call
   type = function() {
-    return exprFn( arguments )
+    return exprFn( ...arguments )
   };
 
   type.name = exprName;
