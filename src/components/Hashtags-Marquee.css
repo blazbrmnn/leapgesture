@@ -1,0 +1,16 @@
+.marquee-container {
+	width: calc(100% + 1px);
+}
+
+.tag-panel .trigger ul  {
+	list-style: none;
+	overflow: hidden;
+	padding-left: 0px;
+	margin-bottom: 5px;
+}
+
+.tag-panel .trigger ul li {
+	float: left;
+	margin-right: 20px;
+	margin-top: 6px;
+}

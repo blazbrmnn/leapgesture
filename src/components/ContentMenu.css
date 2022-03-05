@@ -1,0 +1,33 @@
+.filters {
+	position: relative;
+	margin: 0px auto 0px auto;
+    top: 55px;
+}
+
+form.filters {
+    display: inline;
+}
+
+hr.filters-divider {
+	border: none;
+    width: calc(50% - 168px);
+    margin-top: 71px;
+}
+
+hr.filters-divider.left {
+	height: 1px;
+    float: left;
+    background: -webkit-linear-gradient(left, transparent, black); /*For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, transparent, black); /* For Opera 11.1 to 12.0 */ 
+    background: -moz-linear-gradient(right, transparent, black); /* For Firefox 3.6 to 15 */ 
+    background: linear-gradient(to right, transparent, black); /* Standard syntax */
+}
+
+hr.filters-divider.right {
+	height: 1px;
+    float: right;
+    background: -webkit-linear-gradient(left, black, transparent);
+    background: -o-linear-gradient(right, black, transparent);
+    background: -moz-linear-gradient(right, black, transparent);
+    background: linear-gradient(to right, black, transparent);
+}

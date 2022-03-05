@@ -1,0 +1,71 @@
+/* Buttons */
+
+label.btn {
+	border-radius: 18px;
+}
+
+.btn-check:disabled+.btn.btn-primary, .btn-check[disabled]+.btn.btn-primary {
+	z-index: 1;
+	opacity: 1;
+}
+
+.btn.btn-primary {
+	background-color: black;
+	border: 1px solid black;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 13px;
+}
+
+.btn-primary:active,
+.btn-primary:focus {
+	box-shadow: none !important;
+	outline: 0px !important;
+}
+
+.btn-group input[type="radio"]+label {
+	transition: background-color 0.3s ease-in 0.0s, box-shadow 0.2s ease-in 0.0s;
+}
+
+.btn-group input[type="radio"]:checked+label,
+.btn-group input[type="radio"]:active+label,
+.btn-group input[type="radio"]:hover+label,
+.btn-group input[type="radio"]:focus+label {
+	background-color: #61dafb;
+	border: 1px solid black;
+	outline: 0 none;
+}
+
+.btn-group input[type="radio"]:focus+label,
+.btn-group input[type="radio"]:focus {
+    box-shadow: 0px 1px 1px #61dafb inset, 0px 0px 8px #61dafb;
+    outline: none;
+}
+
+
+/* Dropdown menu items */
+
+.dropdown-menu-dark button.selected {
+	background: #61dafb;
+	color: #FFF;
+}
+
+.dropdown-menu-dark li.dropdown-item:active,
+.dropdown-menu-dark li.dropdown-item.active {
+	background: #61dafb;
+	width: 100%;
+}
+
+
+/* Cards */
+
+div.card {
+	background-color: #343a40;
+	color: #FFF;
+	white-space: pre-wrap;
+	text-align: left;
+	filter: drop-shadow(0px 7px 7px #23272f);
+}
+
+
+/* Content dividers */
+

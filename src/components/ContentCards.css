@@ -1,0 +1,12 @@
+.content-cards.container {
+	margin-top: 48px;
+	margin-bottom: 100px;
+}
+
+.content-cards p {
+	margin-bottom: 0.1rem;	
+}
+
+.content-cards .card p:last-of-type {
+	margin-bottom: 0px;
+}

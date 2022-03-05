@@ -1,0 +1,187 @@
+/* Holder */
+
+.tag-panel {
+	display: block;
+	position: relative;
+	margin: -26px auto 0px auto;
+}
+
+
+/* Trigger */
+
+.tag-panel a.trigger {
+	width: calc(100% - 2px);
+	height: 10px;
+	cursor: pointer;
+	margin-bottom: 24px;
+}
+
+.tag-panel a.trigger div.pegged {
+	display: block;
+	border-bottom-left-radius: 22px;
+	border-bottom-right-radius: 22px;
+	height: 28px;
+	background-color: rgb(114, 116, 118);
+}
+
+.tag-panel .trigger i {
+	clip-path: polygon(0 0%, 50% 60%, 100% 0%);
+	top: -40px;
+	margin-bottom: -60px;
+}
+
+
+/* Window */
+
+.tag-panel .window {
+	position: relative;
+	top: -5px;
+	margin-bottom: -3px;
+}
+
+.tag-panel .window a {
+	cursor: pointer;
+}
+
+.tag-panel .window div.pegged {
+	display: block;
+	height: 28px;
+	border-top-left-radius: 22px;
+	border-top-right-radius: 22px;
+	margin-bottom: -26px;
+	position: relative;
+	top: 28px;
+	width: calc(100% - 2px);
+	left: 1px;
+	z-index: 8;
+	background-color: rgb(114, 116, 118);
+}
+
+.tag-panel .window li {
+	transition: background-color 0.3s;
+}
+
+.tag-panel .window i {
+	top: 30px;
+  line-height: 42px;
+	clip-path: polygon(0 100%, 100% 100%, 50% 40%);
+}
+
+.tag-panel .window ul {
+	filter: drop-shadow(0px 7px 7px #23272f);
+}
+
+.tag-panel .window ul  {
+	z-index: 10;
+	list-style: none;
+	padding: 10px 15px;
+	position: relative;
+	border-radius: 22px;
+	top: 29px;
+	width: 100%;
+	background-color: #343a40;
+	overflow-y: scroll;
+	max-height: calc(100vh - 100px);
+	text-align: center;
+	scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE, Edge */
+}
+
+.tag-panel .window ul::-webkit-scrollbar {
+  display: none;
+}
+
+.tag-panel .window ul li {
+	padding: 3px 7px 3px 9px;
+	margin: 5px;
+	float: left;
+	display: block;
+	color: #FFF;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 13px;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.tag-panel .window ul li:hover,
+.tag-panel .window ul li:active,
+.tag-panel .window ul li.selected {
+	background-color: #61dafb;
+}
+
+
+/* General */
+
+.tag-panel div.pegged, .tag-panel i {
+	background-color: rgb(114, 116, 118);
+	cursor: pointer;
+	color: white;
+	transition: background-color 0.3s;
+}
+
+.tag-panel i {
+	margin: 0px auto;
+	display: block;
+	position: relative;
+	z-index: 15;
+	width: 30px;
+	height: 30px;
+	line-height: 14px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.tag-panel a, .tag-panel a:link, .tag-panel a:visited, 
+.tag-panel a:hover, .tag-panel a:active {
+	text-decoration:  none;
+}
+
+.tag-panel a:hover i, .tag-panel a:hover div.pegged {
+	background-color: #61dafb;
+	color: black;
+}
+
+.tag-panel ul, .tag-panel i {
+	position: relative;
+}
+
+
+/* Backdrop */
+
+.tag-panel-backdrop {
+	position: fixed;
+	display: none;
+	z-index: 2;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+}
+
+.tag-panel-backdrop.show {
+	display: block;
+}
+
+
+/* Show & hide */
+
+.tag-panel .trigger {
+	display: block;
+}
+
+.tag-panel.show .trigger {
+	display: none;
+}
+
+.tag-panel .window {
+	display: none;
+}
+
+.tag-panel.show .window {
+	display: block;
+}
+
+.tag-panel.show .show-on-closed {
+	display: none;
+}

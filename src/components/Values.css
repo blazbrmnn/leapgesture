@@ -1,0 +1,95 @@
+#values {
+  padding-bottom: 30px;
+}
+
+#values form {
+  display: inline;
+}
+
+#values hr.headline-divider {
+  border: none;
+  width: calc(50% - 80px);
+}
+
+hr.headline-divider.left {
+  height: 1px;
+  float: left;
+  background: -webkit-linear-gradient(left, transparent, black); /*For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, transparent, black); /* For Opera 11.1 to 12.0 */ 
+  background: -moz-linear-gradient(right, transparent, black); /* For Firefox 3.6 to 15 */ 
+  background: linear-gradient(to right, transparent, black); /* Standard syntax */
+}
+
+hr.headline-divider.right {
+  height: 1px;
+  float: right;
+  background: -webkit-linear-gradient(left, black, transparent);
+  background: -o-linear-gradient(right, black, transparent);
+  background: -moz-linear-gradient(right, black, transparent);
+  background: linear-gradient(to right, black, transparent);
+}
+
+.values-tags .dropdown-toggle.btn-group{
+  background-color: black;
+  border: 0px;
+}
+
+
+/* Card */
+
+#values .card {
+  color: #FFF;
+  white-space: pre-wrap;
+  text-align: left;
+  padding-bottom: 3px;
+}
+
+#values .card .percentage {
+  width: calc(100% - 6px);
+  height: 2px;
+  position: relative;
+  left: 3px;
+  top: 0px;
+  display: inline-block;
+}
+
+#values .card .percentage div {
+  height: 2px;
+  display: block;
+  float: left;
+  position: relative;
+  top: 2px;
+}
+
+
+/* Input box */
+
+#values input.value-input {
+  padding: 5px 15px 5px 15px;
+  border: 2px solid rgb(114, 116, 118);
+  border-radius: 18px;
+  background: white;
+  position: relative;
+  top: 2px;
+  margin-bottom: 8px;
+  z-index: 1;
+}
+
+#values input.value-input:focus-within {
+  border: 2px solid #61dafb;
+  box-shadow: none;
+  outline: 0px
+}
+
+#values span#color-picker {
+  display: inline-block;
+  background-color: #000;
+  height: 37px;
+  width: 50px;
+  border-radius: 0px 18px 18px 0px;
+  position: relative;
+  top: -1px;
+  left: -18px;
+  margin-bottom: -15px;
+  cursor: pointer;
+}

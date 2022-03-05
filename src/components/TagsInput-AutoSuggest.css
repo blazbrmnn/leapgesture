@@ -1,0 +1,109 @@
+.react-autosuggest__input {
+  height: 30px;
+  padding: 10px 20px 10px 40px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.react-autosuggest__input, .react-autosuggest__suggestions-container--open {
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  text-align: left;
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+  z-index: 100;
+  position: absolute;
+  top: 62px;
+}
+
+.react-autosuggest__suggestions-container--open {
+  display: block;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  border-radius: 22px;
+  border-bottom-left-radius: 22px;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  max-height: calc(100vh - 85px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE, Edge */
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  color: #61dafb;
+}
+
+.sugg-option {
+  display: flex;
+}
+
+.react-autosuggest__suggestions-list::-webkit-scrollbar {
+  display: none;
+}
+
+
+@media (max-width: 575px) {
+  .react-autosuggest__suggestions-container {
+    width: 100%;
+    left:0px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .react-autosuggest__suggestions-container {
+    width: 540px;
+    left:-webkit-calc(50% - 270px);
+    left:-moz-calc(50% - 270px);
+    left:calc(50% - 270px);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .react-autosuggest__suggestions-container {
+    width: 720px;
+    left:-webkit-calc(50% - 360px);
+    left:-moz-calc(50% - 360px);
+    left:calc(50% - 360px);
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .react-autosuggest__suggestions-container {
+    width: 960px;
+    left:-webkit-calc(50% - 480px);
+    left:-moz-calc(50% - 480px);
+    left:calc(50% - 480px);
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .react-autosuggest__suggestions-container {
+    width: 1140px;
+    left:-webkit-calc(50% - 570px);
+    left:-moz-calc(50% - 570px);
+    left:calc(50% - 570px);
+  }
+}
+
+@media (min-width: 1400px) {
+  .react-autosuggest__suggestions-container {
+    width: 1320px;
+    left:-webkit-calc(50% - 660px);
+    left:-moz-calc(50% - 660px);
+    left:calc(50% - 660px);
+  }
+}

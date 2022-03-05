@@ -1,0 +1,76 @@
+.tags-dropdown {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 12px;
+}
+
+.tags-dropdown .btn, .tags-dropdown .dropdown-menu {
+	font-size: 12px;
+}
+
+.tags-dropdown .dropdown-menu {
+	padding: 8px 0;
+}
+
+.tags-dropdown button {
+	height: 28px;
+	padding: 0 8px;
+	border-radius: 4px;
+	border-width: 0px;
+	background: #282c34;
+	margin-right: 4px;
+}
+
+.tags-dropdown .dropdown-menu-dark li.dropdown-item {
+	padding-right: 1.8rem;
+}
+
+.tags-dropdown .dropdown-item a {
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+
+.tags-dropdown .tag-close-icon {
+	display: block;
+	width: 15px;
+	height: 15px;
+	line-height: 13px;
+	text-align: center;
+	font-size: 14px;
+	font-style: normal;
+	font-weight:  bold;
+	margin-left: 10px;
+	color: #0052cc;
+	border-radius: 50%;
+	background: #fff;
+	cursor: pointer;
+
+	position: absolute;
+	right: 5px;
+	margin-top: -16px;
+}
+
+.tags-dropdown .scrollbar.dropdown-menu {
+	overflow-y: auto;
+	background: #343a40;
+}
+
+.tags-dropdown .scrollbar.dropdown-menu::-webkit-scrollbar-track {
+	border-radius: 0.25rem;
+	padding: 2px 0;
+	background-color: #343a40;
+
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.3); 
+}
+
+.tags-dropdown .scrollbar.dropdown-menu::-webkit-scrollbar {
+  width: 10px;
+}
+
+.tags-dropdown .scrollbar.dropdown-menu::-webkit-scrollbar-thumb {
+	border-radius: 0.25rem;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgb(114, 116, 118);
+
+  -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.5); 
+}
