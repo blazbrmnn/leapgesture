@@ -35,8 +35,9 @@ profile: [
 	'Rapid development', 'Lean business model generation', 'Service design thinking jam', 'Crowdfunding campaign design' ]},
 
 {
-	skillset: 'Web development',
-	namespace: [ 'node-js', 'javascript-es6', 'react', 'redux', 'twitter-bootstrap', 'graphql', 'json', 'meteor-js', 'json-schema', 'php', 'sql', 'css', 'svg', 'microdata', 'markdown', 'regex', 'holochain', 'typescript' ]
+	skillset: 'DevOps',
+	namespace: [ 'javascript', 'node-js', 'react-js', 'twitter-bootstrap', 'redux', 'graphql', 'express-js', 'json-schema', 'sql', 'css', 'svg', 'microdata', 'commonmark', 'regex', 'shell', 
+	            { other:[ "typescript", "meteor-js", "php", "holochain" ] }]
 },
 
 { 'Copywriting': ['Social media campaigns', 'Website texts', 'How-to & DIY articles', 'Code documentation', 'Commonmark'] },
