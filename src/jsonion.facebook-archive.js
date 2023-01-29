@@ -12,15 +12,23 @@ var types = {
 	float: parseFloat,
 
 	stringDecode: function (string) {
-		if (typeof string === 'string')
+		if (typeof string === 'string') {
+		try {
 			return decodeURIComponent(escape(string));
+		} catch (e) {
+			return false;
+		}}
 		else
 			return false;
 	},
 
 	stringDecodeNotEmpty: function (string) {
-		if (typeof string === 'string' && string.length)
+		if (typeof string === 'string' && string.length) {
+		try {
 			return decodeURIComponent(escape(string));
+		} catch (e) {
+			return false;
+		}}
 		else
 			return false;
 	},
